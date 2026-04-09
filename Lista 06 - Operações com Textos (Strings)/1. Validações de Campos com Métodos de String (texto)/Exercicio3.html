@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira e Última letra</title>
+</head>
+<body>
+
+    <h3>3. Primeira e Última letra</h3>
+
+    Digite sua frase <br> <br>
+    <input type="text" id="inpFrase"> <br><br>
+
+    Digite sua palavra <br><br>
+    <input type="text" id="inpPalavra"> <br><br>
+
+    <button onclick="Analisar()">Analisar frase</button> <br><br>
+    
+    <div id="exibirResultado"></div>
+
+
+
+</body>
+</html>
+<script>
+
+    function Analisar(){
+        let frase = inpFrase.value
+        let palavra = inpPalavra.value
+
+        let frase_comeco = frase.startsWith(palavra)
+        let frase_fim = frase.endsWith(palavra)
+
+        if (frase_comeco && frase_fim){
+            exibirResultado.innerHTML = `A frase começa e termina com ${palavra}`
+        } else if (frase_comeco){
+            exibirResultado.innerHTML = `A frase começa com ${palavra}!`
+        }else if (frase_fim){
+            exibirResultado.innerHTML = `A frase termina com ${palavra}!`
+        } else {
+            exibirResultado.innerHTML = `A frase não começa e nem termina com ${palavra}!`
+            
+        }
+    }
+
+
+
+
+</script>

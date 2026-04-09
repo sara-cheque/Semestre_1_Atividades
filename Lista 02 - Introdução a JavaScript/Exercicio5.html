@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opnião familiar</title>
+</head>
+<body>
+
+    <h1>Opnião familiar</h1>
+
+    <h3>Sua nota</h2>
+    <input type="number" name="Nota" id="Nota"><br><br>
+
+    <button onclick="OpVo()"> Opinião da avó</button>
+    <button onclick="OpMae()"> Opinião da mãe </button>
+
+</body>
+</html>
+
+<script>
+
+    function OpVo(){
+        alert(`Muito bem, que neto inteligente, porque tirou ${Nota.value}`)
+    }
+
+    
+    function OpMae(){
+        alert(`Não fez mais que tua obrigação com essa nota ${Nota.value}`)
+    }
+
+</script>

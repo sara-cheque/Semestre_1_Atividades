@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Refrigerante</title>
+</head>
+<body>
+
+    <h3>Controle de Refrigerante</h3>
+
+    Latinhas por dia 
+    <input type="text" id="iptLata"> <br><br>
+
+    <button onclick="Refris()">Quantos refris</button> <br><br>
+
+    <p id="ExibirResultado"></p>
+
+    
+</body>
+</html>
+
+<script>
+
+    function Refris(){
+        let latas = Number(iptLata.value)
+        let qtdLatas = (latas * 365)
+          
+
+        
+        if (qtdLatas > 500){
+            ExibirResultado.innerHTML = (`Você consome ${qtdLatas} latinhas por ano <br> Cuidado com as diabetes!`)
+        } 
+        
+        else {
+            ExibirResultado.innerHTML = (`Você consome ${qtdLatas} latinhas por ano`)
+
+        }
+    }
+
+
+
+</script>

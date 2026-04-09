@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de divisibilidade</title>
+</head>
+<body>
+
+    <h3>Teste de divisibilidade</h3>
+
+    Numero 1
+    <input type="text" id="inpNumero1"> <br><br>
+
+    Numero 2
+    <input type="text" id="inpNumero2"> <br><br>
+
+    <button onclick="Testar()">Testar</button> <br><br>
+
+
+    <img style="width: 200px;" id="imagem">
+    
+</body>
+</html>
+
+<script>
+
+    function Testar() {
+
+        let numero1 = Number(inpNumero1.value)
+        let numero2 = Number(inpNumero2.value)
+
+        let resto = numero1 % numero2
+
+        if (resto == 0){
+            imagem.src='https://t3.ftcdn.net/jpg/06/07/23/16/240_F_607231666_p7dlsK99mimHT64kLaYabkvqfBROt14Z.jpg';
+        } else if (resto == 1) {
+            imagem.src='https://t4.ftcdn.net/jpg/06/07/23/19/240_F_607231908_1j1bQbLfpobfKbpfahPH4PXnsHL1ZuXQ.jpg';
+        }
+    }
+
+
+</script>

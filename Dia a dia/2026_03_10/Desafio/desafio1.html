@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Credenciais</h3>
+
+    Digite seu usuario
+    <input type="text" id="iptUsuario"> <br><br>
+
+
+    Digite sua senha
+    <input type="text" id="iptSenha"><br><br>
+
+    <button onclick="Validar()">Validar</button>
+    
+</body>
+</html>
+
+<script>
+
+    function Validar(){
+        let usuario = iptUsuario.value
+        let senha = iptSenha.value
+
+       // if (usuario == 'admin' && senha == 123){
+        //    alert('Login realizado com sucesso')
+        //} else {
+       //     alert('Usuario e/ou senha incorretos')
+        //}
+
+        if (usuario != 'admin' || senha != '123'){
+            alert('Usuario e/ou senha incorretos')
+        } else {
+            alert('Login realizado com sucesso')
+        }
+    }
+
+
+
+</script>

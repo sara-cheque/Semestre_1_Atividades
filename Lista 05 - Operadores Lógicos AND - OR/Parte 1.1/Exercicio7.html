@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticação Segura</title>
+</head>
+<body>
+
+    <h3>4. Autenticação Segura: Acesso ao Banco Melete</h3>
+
+    Insira seu usuario
+    <input type="text" id="inp_usuario"> <br><br>
+
+    Insira sua senha
+    <input type="text" id="inp_senha"> <br><br>
+
+    Insira sua informação pessoal
+    <input type="text" id="inp_informacao"> <br><br>
+
+    <button onclick="Autenticar()">Autenticar</button> <br><br>
+
+    <div id="exibirResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    let contador = 3
+    let bloqueado = true
+
+    function Autenticar(){
+        let usuario = inp_usuario.value
+        let senha = inp_senha.value
+        let informacao = inp_informacao.value
+
+
+        if (((contador >= 1 && bloqueado)) && (usuario == 'ana' && senha == 'braga' && (informacao == '1949' || informacao == 'louro josé' ))){
+            exibirResultado.innerHTML = 'Usuário autenticado'
+            contador = 3
+        } else {
+            if (contador >= 2){
+                contador--
+                exibirResultado.innerHTML = `Falha na autenticação <br> Você ainda tem ${contador} tentativa(s)  `
+                
+            } else {
+                exibirResultado.innerHTML = `Usuário BLOQUEADO! Procure seu gerente! `
+                bloqueado =  false
+            }
+            document.getElementById('inp_usuario').value = '';
+            document.getElementById('inp_senha').value = '';
+            document.getElementById('inp_informacao').value = '';
+        }
+    }
+
+</script>

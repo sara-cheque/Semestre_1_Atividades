@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depósito e Retirada de dinheiro</title>
+</head>
+<body>
+
+    <h3>Depósito e Retirada de dinheiro</h3>
+
+    Valor 
+    <input type="text" id="iptValor"><br><br>
+
+    <button onclick="Depositar()">Depositar</button>
+    <button onclick="Retirar()">Retirar</button>
+
+    <p id="ExibirResultado1"></p>
+    <p id="ExibirResultado2"></p>
+
+    
+</body>
+</html>
+
+<script>
+
+    let saldo = 0
+
+    function Depositar(){
+        let valor = Number(iptValor.value)
+        saldo += valor
+
+        ExibirResultado1.innerHTML = (`Depósito de R$${valor} efetuado!`)
+        ExibirResultado2.innerHTML = (`Saldo atual: R$${saldo} `)
+
+        
+    }
+    function Retirar(){
+        let valor = Number(iptValor.value)
+        saldo -= valor
+
+        ExibirResultado1.innerHTML = (`Retirada de R$${valor} efetuada!`)
+        ExibirResultado2.innerHTML = (`Saldo atual: R$${saldo} `)
+    }
+
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do Vale Transporte </title>
+</head>
+<body>
+
+    <h3>Cálculo do Vale Transporte </h3>
+
+    Valor da passagem:   
+    <input type="text" id="valorPassagem"> <br><br>
+
+    Quantidade de viagens por mês:
+    <input type="text" id="qtdViagem"> <br><br>
+
+    Distancia do seu trabalho até sua casa:
+    <input type="text" id="iptDistancia"><br><br>
+
+    <button onclick="CalcularVT()">Calcular VT</button>
+
+    <p id="ExibirResultado"></p>
+    <p id="ExibirResultado1"></p>
+    <p id="ExibirResultado2"></p>
+
+    
+</body>
+</html>
+
+<script>
+
+    function CalcularVT(){
+
+        let valor = Number(valorPassagem.value)
+        let qtdPassagem = Number(qtdViagem.value)
+        let distancia = Number(iptDistancia.value)
+
+        let qtdOnibus =  (qtdPassagem * 90) / 100
+        let qtdUber = (qtdPassagem * 10) / 100
+
+        let valorUber = 0.75
+        let ValorFinalUber = (distancia * valorUber) *  qtdUber
+
+        let valorFinalOnibus = qtdOnibus * valor
+
+        let valorFinal = valorFinalOnibus + ValorFinalUber
+
+        ExibirResultado.innerHTML = (` Você vai gastar R$${valorFinal} por mês com transporte.  `)
+        ExibirResultado1.innerHTML = (` Você vai gastar R$${ValorFinalUber} por mês com Uber.  `)
+        ExibirResultado2.innerHTML = (` Você vai gastar R$${valorFinalOnibus} por mês com Onibus.  `)
+
+
+    }
+
+
+</script>

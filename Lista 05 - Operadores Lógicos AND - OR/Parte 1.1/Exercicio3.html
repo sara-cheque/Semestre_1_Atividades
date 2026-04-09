@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Preço do Bilhete Único de São Paulo</title>
+</head>
+<body>
+
+    <h3>3. Simulador de Preço do Bilhete Único de São Paulo</h3>
+
+    Categoria do seu bilhete único <br><br>
+    <select id="select_bilhete">
+        <option disabled selected value="0">Selecione um</option>
+        <option value="1">Comun</option>
+        <option value="2">Estudante</option>
+        <option value="3">Idoso/PNE</option>
+    </select> <br><br>
+
+    Tipo de passagem <br><br>
+    <select id="select_passagem">
+        <option disabled selected value="0">Selecione um</option>
+        <option value="1">Passagem única </option>
+        <option value="2">Passagem integração </option>
+    </select> <br><br>
+
+    <button onclick="Simular()">Simular preço</button> <br><br>
+
+    <div id="exibirResultado"></div>
+
+
+    
+</body>
+</html>
+
+<script>
+
+    function Simular(){
+        let bilhete = select_bilhete.value;
+        let passagem = select_passagem.value
+        let inteira_meia = 1
+        let valor = 4.40
+        let valor_final = 0
+
+
+        if (bilhete ==  2){
+            inteira_meia = 2
+        }
+
+        if (bilhete == 3){
+            valor = 0
+        }
+
+        if (passagem == 2){
+            valor = 5.90 
+        }
+
+        valor_final = valor / inteira_meia
+
+        exibirResultado.innerHTML = `Valor da passagem escolhida: R$${valor_final.toFixed(2)}`
+
+
+    }
+
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota da atividade avaliativa</title>
+</head>
+<body>
+
+    <h3>Nota da atividade avaliativa</h3>
+
+    Nome do aluno: 
+    <input type="text" id="nomeAluno"> <br><br>
+
+    Nota da atividade avaliativa 1: 
+    <input style="width: 50px;"  type="text" id="atv1"> <br> <br>
+
+    Nota da atividade avaliativa 2: 
+    <input style="width: 50px;"  type="text" id="atv2"> <br><br>
+
+    Nota da atividade avaliativa 3: 
+    <input style="width: 50px;"  type="text" id="atv3"> <br><br>
+
+    <button onclick="notaFinal()">Mostrar nota final</button> <br><br>
+
+    <b id="exibirSoma"></b> <br>
+    <b id="exibirMedia"></b>
+    
+</body>
+</html>
+
+<script>
+
+    function notaFinal(){
+
+        let nome = nomeAluno.value
+
+        let Atividade1 = Number(atv1.value)
+        let Atividade2 = Number(atv2.value)
+        let Atividade3 = Number(atv3.value)
+
+        let soma = Atividade1 + Atividade2 + Atividade3
+        let media = soma / 3
+
+        exibirSoma.innerHTML = (`A soma das suas três atividades é ${soma}`)
+        exibirMedia.innerHTML = (`${nome}, a média das suas atividades é: ${media}`)
+
+    }
+
+
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Viva de Filmes</title>
+</head>
+
+<body>
+
+    <h3>6. Lista Viva de Filmes Favoritos</h3>
+
+    Insira seu filme favorito <br><br>
+    <input type="text" id="inpFilme"> <br><br>
+
+    <button onclick="cadastrar()">Cadastrar</button> <br><br>
+
+     <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    let listaFilme = []
+    let contador = 0
+    let color = 6
+    let op = -1
+    let cor = 'blue'
+
+
+    function cadastrar(){
+    let filme = inpFilme.value
+        listaFilme.push(filme)
+
+        ultimoLista = (listaFilme.length) - 1
+        contador++
+
+        console.log('color ' + color)
+        console.log('op ' + op)
+        
+
+        color += op
+        
+        if (color == 5 ){
+            cor = 'blue'
+            op = -1
+        } else if (color == 0){
+            cor = 'red'
+            op = 1
+
+        } 
+
+        exibirResultado.innerHTML += `<span style = 'color: ${cor}'> ${contador}° filme: ${listaFilme[ultimoLista]}</span> <br>`
+    }
+
+
+</script>

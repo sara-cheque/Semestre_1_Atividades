@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta de luz</title>
+</head>
+<body>
+
+    <h3>Conta de luz</h3>
+
+    Quantidade de KWh / mês
+    <input type="text" id="iptQuantidade"> <br><br>
+
+    <button onclick="Conta()">Calcular conta de luz</button>
+
+    <p id="ExibirResultado"></p>
+
+    
+</body>
+</html>
+
+<script>
+
+    function Conta(){
+
+        let quantidade = Number(iptQuantidade.value)
+        let conta = (quantidade * 0.85)
+        let contaFinal = 0
+        let mensagem = ""
+
+        if (conta < 100){
+            contaFinal = (conta * 10) / 100
+            mensagem = "com desconto de 10%"
+        } else {
+            contaFinal = conta
+        }
+
+        alert(`Valor a ser pago: ${contaFinal.toFixed(2)} ${mensagem}`)
+
+
+
+    }
+
+
+</script>

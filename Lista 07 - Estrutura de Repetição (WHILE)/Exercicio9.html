@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 9. Viva o 7! </title>
+</head>
+<body>
+
+    <h3>9. Viva o 7!</h3>
+
+    Digite um número (entre 0 e 200):
+    <input type="text" id="inpNumero"> <br><br>
+
+    <button onclick="filtrar()"> Viva o 7! </button>
+    <div id="exibirResultado"></div>
+
+</body>
+</html>
+
+<script>
+    
+    let contador = 0;
+
+    function filtrar() { 
+        let numero = inpNumero.value
+
+        if (numero => 0 && numero <= 200) {
+            while (contador < numero) {
+                contador += 1;
+                if (contador % 7 == 0) {
+                    exibirResultado.innerHTML += `${contador} <br>`;   
+                } 
+            } 
+        } 
+    }
+</script>

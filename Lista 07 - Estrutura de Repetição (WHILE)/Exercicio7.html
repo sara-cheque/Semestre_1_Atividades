@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=[device-width], initial-scale=1.0">
+    <title>S2 Pares</title>
+</head>
+<body>
+    <h3>S2 Pares</h3>
+
+
+    <button onclick="contar()"> S2 Pares </button>
+    <div id="exibirResultado"></div>
+
+</body>
+</html>
+
+<script>
+    let contador = 0;
+
+    function contar() { 
+
+        while (contador < 100) {
+            contador += 1;
+            if (contador % 2 == 0) {
+                exibirResultado.innerHTML += `${contador} <br>`;   
+            } 
+        } 
+    } 
+</script>

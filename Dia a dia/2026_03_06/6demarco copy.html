@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANINHAMENTO</title>
+</head>
+<body>
+    <input type="text" name="" id="input_idade">
+
+    <button onclick="analisar()">Analisar</button>
+
+    <div id="mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    // menor que 16 e 18
+    // maior que 18
+    // menor que 16
+
+
+    function analisar(){
+        let idade = Number(input_idade.value)
+
+        if (idade < 16){
+            mensagem.innerHTML = `Menor que 16 anos`
+        } else if (idade > 16){
+            mensagem.innerHTML = `maior que 16 anos`
+        }else {
+            mensagem.innerHTML = `maior que 18 anos`
+
+        }
+       
+
+    }
+
+
+</script>

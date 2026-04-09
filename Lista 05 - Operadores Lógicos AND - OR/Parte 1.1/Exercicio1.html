@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Avaliação de Atendimento</title>
+</head>
+<body>
+
+    <h3>1. Sistema de Avaliação de Atendimento: Dê Sua Nota!</h3>
+
+    Insira sua nota do atendimento
+    <input type="text" id="inpNota"> <br><br>
+
+    <button onclick="Avaliar()">Avaliar atendimento</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function Avaliar(){
+        let nota = Number(inpNota.value)
+
+        if (nota < 5 && nota >= 0){
+            exibirResultado.innerHTML = `Não aprovado`
+        } else if (nota >= 5 && nota <= 6){
+            exibirResultado.innerHTML = `Neutro`
+        } else if (nota > 6 && nota <= 10){
+            exibirResultado.innerHTML = `Aprovado`
+        } else{
+            console.log(46)
+            exibirResultado.innerHTML = `Nota invalida`
+        }
+    }
+
+
+</script>

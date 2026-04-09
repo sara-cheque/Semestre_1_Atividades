@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="Contar()">Contar ate 10</button>
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    let contador = 0
+
+    function Contar(){
+        if (contador <  10){
+            contador++
+            exibirResultado.innerHTML += `<br> ${contador}`
+        } else if (contador == 10) {
+            contador++
+            exibirResultado.innerHTML += `<br> Cabou`
+        } 
+    }
+
+
+
+</script>

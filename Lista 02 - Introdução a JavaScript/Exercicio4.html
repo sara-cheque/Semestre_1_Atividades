@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logradouro</title>
+</head>
+<body>
+
+    <span style='font-size:100px;'>&#127969;</span>
+    <h1>Logradouro</h1>
+
+    <h3>Rua/Avenida:</h2>
+    <input type="text" name="Rua" id="Rua"><br>
+
+    <h3>N° da casa</h2>
+    <input type="number" name="Casa" id="Casa"><br><br>
+
+    <button onclick="Logradouro()"> Onde eu moro </button>
+
+</body>
+</html>
+
+<script>
+
+
+    function Logradouro(){
+
+        alert(`
+        Seu logradouro é ${Rua.value} 
+        O número do seu logradouro é ${Casa.value} `)
+
+    }
+
+</script>

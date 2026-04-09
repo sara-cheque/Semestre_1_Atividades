@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise da c/c (Conta Corrente)</title>
+</head>
+<body>
+
+    <h3>Análise da c/c (Conta Corrente)</h3>
+
+    Saldo da Conta
+    <input type="text" id="inpSaldo"> <br><br>
+
+    Valor do débito
+    <input type="text" id="inpDebito"><br><br>
+
+    <button onclick="Analisar()">Analisar conta</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+
+        let saldo = Number(inpSaldo.value)
+        let debito = Number(inpDebito.value)
+
+        let saldoAtual = saldo - debito
+
+        if (saldoAtual < 0)  {
+
+            exibirResultado.innerHTML = 
+                `<span style = color:red> <b> 
+                    o saldo atual da conta corrente é ${saldoAtual}
+                </b> </span>`
+                
+        }else {
+
+            exibirResultado.innerHTML = 
+                `<span style = color:blue> <i> 
+                    o saldo atual da conta corrente é ${saldoAtual}
+                </i> </span>`
+
+        }
+
+    }
+
+
+
+</script>

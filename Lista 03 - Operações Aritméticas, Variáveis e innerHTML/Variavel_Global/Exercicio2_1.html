@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar saldo bancário</title>
+</head>
+<body>
+
+    <h3>Atualizar saldo bancário</h3>
+    <button onclick="Receber()">Receber 100</button>
+    <button onclick="Pagar()">Pagar 50</button><br><br>
+
+    <p id="ExibirResultado1">0</p>
+    <p id="ExibirResultado2"></p>
+
+    
+</body>
+</html>
+
+<script>
+
+    let saldo = 0;
+
+    function Receber(){
+        saldo += 100
+        ExibirResultado1.innerHTML = (`Transferência de R$100 recebida!`)
+        ExibirResultado2.innerHTML = (`Saldo atual: R$${saldo}`)
+
+    }
+
+    function Pagar(){
+        saldo -= 50
+        ExibirResultado1.innerHTML = (`Pagamento de R$50 efetuado!`)
+        ExibirResultado2.innerHTML = (`Saldo atual: R$${saldo}`)
+    }
+
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação das finanças </title>
+</head>
+<body>
+
+    <h3>Verificação das finanças </h3>
+
+    Saldo bancario
+    <input type="text" id="inpSaldo"><br><br>
+
+    <button onclick="Finanças()">Verificar finanças</button> <br><br>
+
+    <div id="exibirResultado"></div>
+  
+</body>
+</html>
+
+<script>
+
+    function Finanças(){
+        let saldo = Number(inpSaldo.value)
+
+        if (saldo == 0){
+            exibirResultado.innerHTML = `Conta zerada`
+        } else if (saldo < 0 ){
+            exibirResultado.innerHTML = `<span style =color:red> Está devendo!</span>`
+        } else {
+            exibirResultado.innerHTML = `<span style =color:green> Saldo positivo! sorriso</span>` 
+        }
+    }
+
+</script>

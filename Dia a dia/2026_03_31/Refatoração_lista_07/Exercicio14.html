@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 14. Dividibilidade </title>
+</head>
+<body>
+
+    <h3>14. Dividibilidade</h3>
+
+    Digite o primeiro número:
+    <input type="text" id="inpNumero1"><br><br>
+
+    Digite o segundo:
+    <input type="text" id="inpNumero2"><br><br>
+
+    Digite um número para teste de divisibilidade (entre 3 e 13):
+    <input type="text" id="inpDivisivel"><br><br>
+
+    <button onclick="dividir()"> Divisível </button>
+    <div id="exibirResultado"></div>
+
+</body>
+</html>
+
+<script>
+    function dividir() { 
+
+        exibirResultado.innerHTML += ``;   
+
+        
+        let numero1 = Number(inpNumero1.value);
+        let numero2 = Number(inpNumero2.value);
+
+        let numDivisivel = Number(inpDivisivel.value);
+
+        if (numDivisivel >= 3 && numDivisivel <= 13) {
+            for (; numero1 <= numero2; numero1++) {
+
+                if (numero1 % numDivisivel == 0) {
+                    exibirResultado.innerHTML += `${numero1} <br>`;   
+                } 
+               
+            } 
+        }
+    }  
+</script>

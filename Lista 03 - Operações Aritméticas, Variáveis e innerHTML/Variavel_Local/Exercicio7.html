@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da média da SPTech</title>
+</head>
+<body>
+
+    <h3>Cálculo da média da SPTech</h3>
+
+    Nota da avaliação continuada:
+    <input style="width: 50px;" type="text" id="notaContinuada"> <br><br>
+
+    Nota da avaliação semestral:
+    <input style="width: 50px;" type="text" id="notaSemestral"> <br><br>
+
+    Nome do aluno:
+    <input type="text" id="nomeAluno"> <br><br>
+
+    <button onclick="calcularMedia()">Calcular média</button><br><br>
+
+    <b id="exibirResultado"></b><br>
+
+    
+</body>
+</html>
+
+<script>
+
+    function calcularMedia(){
+
+        let nome = nomeAluno.value
+
+        let continuada = Number(notaContinuada.value)
+        let semestral = Number(notaSemestral.value)
+
+        let continuadaPct = (continuada * 40) / 100
+        let semestralPct = (semestral * 60) / 100
+
+        let notaFinal = (continuadaPct + semestralPct) 
+
+        exibirResultado.innerHTML = (`A média de ${nome} será de ${notaFinal}`)
+
+    }
+
+</script>

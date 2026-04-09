@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Filmes Favoritos</title>
+</head>
+<body>
+
+    <h3>4. Top Filmes Favoritos: Do Mais Amado ao Menos</h3>
+
+    Insira seus filmes - do 1° favorito e assim por diante <br><br>
+    <input type="text" id="inpFilme"> <br><br>
+
+    <button onclick="cadastrar()">Cadastrar filme</button>
+    <button onclick="exibir()">Ver favoritos</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    let listaFilme = [];
+
+    function cadastrar(){
+        let filme = inpFilme.value
+        listaFilme.push(filme)
+    }
+
+    function exibir(){
+        let tamanhoLista = listaFilme.length
+        let primeiroLista = listaFilme[0]
+        let ultimoLista = listaFilme[tamanhoLista - 1]
+
+        exibirResultado.innerHTML = `
+            <b> lista: </b> <br> ${listaFilme.toString().replaceAll(',' , '<br>')} <br><br>
+            <b> Total: </b> ${tamanhoLista} <br>
+            O que filme que mais gosta é ${primeiroLista} <br>
+            E desses, o que menos gosta é  ${ultimoLista} 
+        `
+    }
+
+</script>

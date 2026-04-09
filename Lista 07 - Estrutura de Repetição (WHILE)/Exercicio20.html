@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20. Divisibilidade</title>
+</head>
+<body>
+
+    <!-- 
+        20. Divisibilidade
+        Crie  um programa o qual:
+
+        a) Solicite um número, que deve estar entre 10 e 500, exibindo alerta 
+        de erro caso não atenda os critérios;
+
+        b) Ao clicar no botão "Somar Pares", deve exibir todos os números pares entre 1 
+        e o número inserido pelo usuário;
+
+        c) Ao final da listagem, deve exibir a frase "Soma dos pares: X", sendo X a 
+        soma de todos os números exibidos; 
+    -->
+
+    <h3>20. Divisibilidade</h3>
+
+    Insira um número entre 10 e 500
+    <input type="text" id="inpNumero"> <br><br>
+
+    <button onclick="somar()">Somar pares</button>  <br><br>
+
+    <div id="exibirResultado"></div>
+
+    
+</body>
+</html>
+
+<script>
+
+    function somar(){
+        exibirResultado.innerHTML = ''
+
+        let numero = Number(inpNumero.value)
+        let contador = 1
+        let conta = 0
+        let soma = 0
+
+        while(contador < numero){
+            conta = numero % contador
+            if (conta == 0){
+                exibirResultado.innerHTML +=`<br>  ${contador}`
+                soma += contador
+            }
+
+            contador++
+            
+        }
+        exibirResultado.innerHTML +=`<br> <br> Soma dos pares: ${soma}`
+
+
+        
+    }
+
+
+
+</script>

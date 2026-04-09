@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilhete Unico</title>
+</head>
+<body>
+
+    <h2>Bilhete Único</h2>
+
+    Valor da passagem:
+    <input style="width: 70px;"  type="text" name="" id="valorPassagem"> <br> <br>
+
+    Quantas viagens você fara no mês: 
+    <input style="width: 70px;"  type="text" name="" id="qtdPassagem"> <br> <br>
+
+    <button onclick="exibirEconomia()">Ver economia</button> <br><br>
+
+    <b id="exibirResultado"></b>
+
+    
+</body>
+</html>
+
+<script>
+
+    function exibirEconomia(){
+
+        let passagemValor = Number(valorPassagem.value)
+        let passagemQtd = Number(qtdPassagem.value)
+        let passagemEconomia = passagemValor * passagemQtd
+        let resultado = passagemEconomia / 2
+
+        exibirResultado.innerHTML = (`Você economizará R$ ${resultado} por mês`)
+
+    }
+
+
+</script>

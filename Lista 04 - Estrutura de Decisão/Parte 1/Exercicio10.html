@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de horas assistindo streaming</title>
+</head>
+<body>
+
+<h3>Controle de horas assistindo streaming</h3>
+
+Série que voce assistiu
+<input type="text" id="inpSerie"><br><br>
+
+Quantidade de episodios assistidos
+<input type="text" id="inpEpisodios"> <br><br>
+
+<button onclick="Nivel()">Verificar nível</button><br><br>
+
+<div id="exibirMensagem"></div>
+
+
+
+    
+</body>
+</html>
+
+<script>
+
+function Nivel(){
+
+    let serie = inpSerie.value
+    let episodios = Number(inpEpisodios.value)
+    let horas = (episodios * 22) / 60
+
+    exibirMensagem.innerHTML = `Vejo que você gosta da série ${serie}`
+
+    if (horas >= 30){
+        exibirMensagem.innerHTML += `<br> <br>Uau, você realmente gosta dessa série!`
+    }
+
+}
+
+
+</script>

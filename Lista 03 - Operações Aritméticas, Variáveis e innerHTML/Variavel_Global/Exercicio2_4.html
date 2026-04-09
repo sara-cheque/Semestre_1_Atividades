@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de TVM de caldeira de geração energia elétrica</title>
+</head>
+<body>
+
+    <h3>Controle de TVM de caldeira de geração energia elétrica</h3>
+
+    Quantidade de dias de operação
+    <input type="text" id="diasOperacao"> <br><br>
+
+    <button onclick="ProcessarDias()">Processar dias</button>
+    <button onclick="StopOperacao()">Stop Operação</button>
+    <button onclick="ReiniciarProcesso()">Reiniciar Processo</button>
+
+    <p id="ExibirResultado"></p>
+    
+</body>
+</html>
+
+<script>
+
+    let horas = 1000
+
+    
+    function ProcessarDias(){
+
+        let horaAnt = horas
+        let iptDias = Number(diasOperacao.value)
+        let horaDia = iptDias * 24;
+
+        horas -= horaDia
+
+        ExibirResultado.innerHTML += (`O TVM anterior era de ${horaAnt} horas e após ${iptDias} dias de operação o TVM passou para ${horas} horas <br> <br>`)
+
+    }
+
+    function StopOperacao(){
+
+        let horaAnt = horas
+        horas -= 100
+
+        ExibirResultado.innerHTML += (`O TVM anterior era de ${horaAnt} horas, após o Stop de operação o TVM passou para ${horas} horas <br> <br>`)
+    }
+
+    function ReiniciarProcesso(){
+
+        let horaAnt = horas
+        horas = 1000
+
+        ExibirResultado.innerHTML = (` Ainda existia ${horaAnt}  horas, com o reinicio do processo, o TVM passou para 1000 horas. <br> <br>`)
+
+
+
+    }
+
+
+
+
+</script>

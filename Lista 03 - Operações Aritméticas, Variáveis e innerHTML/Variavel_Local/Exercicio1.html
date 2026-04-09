@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora basica</title>
+</head>
+<body>
+
+    <h1>Calculadora basica</h1>
+
+    <p>Numero 1</p>
+    <input type="number" id="N1">
+
+    <p>Numero 2</p>
+    <input type="number" id="N2"> <br><br>
+
+    <button onclick="Adicao()" >           + </button>
+    <button onclick="Subtracao()" >        - </button>
+    <button onclick="Multiplicacao()" >    x </button>
+    <button onclick="Divisao()" >          ÷ </button>
+
+    <br><br>
+    <h3>Resultado: </h3>
+    <h3 id="resultado"></h2>
+    
+</body>
+</html>
+
+
+<script>
+
+
+    function Adicao(){
+
+        let num1 = Number(N1.value);
+        let num2 = Number(N2.value);
+
+        let resultado = num1 + num2
+
+        document.getElementById("resultado").innerText = resultado;
+
+    }
+    function Subtracao(){
+
+        let num1 = Number(N1.value);
+        let num2 = Number(N2.value);
+
+        let resultado = num1 - num2
+
+        document.getElementById("resultado").innerText = resultado;
+
+    }
+    function Multiplicacao(){
+
+        let num1 = Number(N1.value);
+        let num2 = Number(N2.value);
+
+        let resultado = num1 * num2
+
+        document.getElementById("resultado").innerText = resultado;
+
+    }
+    function Divisao(){
+
+        let num1 = Number(N1.value);
+        let num2 = Number(N2.value);
+
+        let resultado = num1 / num2
+
+        document.getElementById("resultado").innerText = resultado;
+        
+    }
+
+
+</script>

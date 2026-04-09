@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19. Números Primos</title>
+</head>
+
+<body>
+
+    <!-- 
+    Crie  um programa o qual:
+
+    a) Ao exibir os divisores do número informado, caso o número seja divisível somente por 1 e por ele mesmo, exiba abaixo: 
+    -->
+
+    <h3>19. Números Primos</h3>
+
+    Digite um número
+    <input type="text" id="inpNumero"> <br><br>
+
+    <button onclick="primo()">Numero primo?</button> <br><br>
+
+    <dvi id="exibirResultado"></dvi>
+
+</body>
+
+</html>
+
+<script>
+
+    function primo() {
+        exibirResultado.innerHTML = ''
+
+        let numero = Number(inpNumero.value)
+        let contador = 0
+
+        while (contador < numero) {
+
+            contador++
+
+            let conta = numero % contador
+
+            if (numero % 2 != 0 && numero % 3 != 0 && numero % 5 != 0){
+                exibirResultado.innerHTML = `<br> ${numero} É UM NUMERO PRIMO`
+            }
+            
+            else if (conta == 0) {
+                exibirResultado.innerHTML += `<br> ${contador}`
+            } 
+        }
+    }
+
+
+
+</script>

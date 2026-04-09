@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro de Números Cabalísticos</title>
+</head>
+<body>
+
+    <h3>6. Filtro de Números Cabalísticos</h3>
+
+    <button onclick="filtro()">Filtrar numeros cabalistos</button> <br><br>
+
+    <div id="exibirResultado"></div>
+
+    
+</body>
+</html>
+
+<script>
+
+    function filtro(){
+        let contador = 0
+        while (contador < 30){
+            if (contador != 3 && contador != 4 && contador != 10 && contador != 12) {
+            
+                exibirResultado.innerHTML +=`<br> ${contador}`
+                contador++
+            } 
+
+            
+        }
+    }
+
+</script>

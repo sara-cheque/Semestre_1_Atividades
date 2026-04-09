@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Meta de Economia</title>
+</head>
+<body>
+
+    <h3>8. Meta de Economia: Você Está no Caminho Certo?</h3>
+
+
+    Meta de economia
+    <input type="text" id="inpMeta"> <br><br>
+
+    Total guardado
+    <input type="text" id="inpTotal"> <br><br>
+
+    <button onclick="Analisar()">Analisar economia</button> <br><br>
+
+    <div id="exibirResultado"></div>
+
+    
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+        let meta = Number(inpMeta.value)
+        let total = Number(inpTotal.value)
+        let diferenca = 0
+
+        if (meta > total){
+            diferenca = meta - total
+            exibirResultado.innerHTML = ` Força! Ainda em busca da meta! Falta ${diferenca} reais`
+
+        } else if (meta == total){
+            exibirResultado.innerHTML = `Parabéns, meta alcançada!`
+        } else {
+            diferenca = total - meta
+            exibirResultado.innerHTML = `Parabéns, meta alcançada!`
+            exibirResultado.innerHTML += `<br> Meta ultrapassada em ${diferenca} reais`
+
+        }
+
+    }
+
+
+
+</script>

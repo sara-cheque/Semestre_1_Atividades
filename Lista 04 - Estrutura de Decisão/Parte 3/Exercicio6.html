@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Times Paulistas</title>
+</head>
+<body>
+
+    <h3>6. Times Paulistas: O Canto da Sua Torcida!</h3>
+
+    Qual time de São Paulo você torce <br><br>
+    <input type="text" id="inpTime"> <br><br>
+
+    <button onclick="Time()">Fale sobre seu time</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function Time(){
+        let time = inpTime.value
+
+        if (time == 'São Paulo'){
+           exibirResultado.innerHTML = `     
+            <span style = 'color:black ; background-color: red'>
+                Salve o Tricolor paulista
+            </span>` 
+        } else if (time == 'Palmeiras'){
+           exibirResultado.innerHTML = `
+            <span style = 'color:white ; background-color: green'>
+                Salve o alviverde imponente
+            </span>` 
+        } else if (time == 'Corinthians'){
+           exibirResultado.innerHTML = `
+            <span style = 'color:white ; background-color: black'> 
+                Salve o Corinthians 
+            </span>`
+        } else if (time == 'Santos'){
+           exibirResultado.innerHTML = `Agora quem dá a bola é o Santos`
+        } else {
+           exibirResultado.innerHTML = `Time invalido` 
+        }
+    }
+
+</script>
+

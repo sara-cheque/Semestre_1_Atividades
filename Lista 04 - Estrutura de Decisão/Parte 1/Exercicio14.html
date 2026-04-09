@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise da média de notas </title>
+</head>
+<body>
+
+    <h3>Análise da média de notas </h3>
+
+    Nota 1 
+    <input type="text" id="inpNota1"> <br><br>
+
+    Nota 2 
+    <input type="text" id="inpNota2"> <br><br>
+
+    <button onclick="Verificar()">Verificar situação</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function Verificar(){
+        let nota1 = Number(inpNota1.value)
+        let nota2 = Number(inpNota2.value)
+
+        let media = (nota1 + nota2) / 2
+
+  
+
+        if (media > 6) {
+            exibirResultado.innerHTML = "Parabéns, aprovado!"  
+            exibirResultado.innerHTML += `<br> Sua média é: ${media}`
+        }else {
+            exibirResultado.innerHTML = "Tente outra vez..." 
+            exibirResultado.innerHTML += `<br> Sua média é: ${media}`
+        }
+
+    }
+
+
+</script>

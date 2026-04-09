@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 10. Pares no Intervalo   </title>
+</head>
+<body>
+
+    <h3>10. Pares no Intervalo</h3>
+
+    Digite o primeiro número:
+    <input type="text" id="inpNumero1"><br><br>
+
+    Digite o segundo:
+    <input type="text" id="inpNumero2"><br><br>
+
+    <button onclick="par()"> S2 Pares </button>
+    <div id="exibirResultado"></div>
+
+</body>
+</html>
+
+<script>
+    function par() { 
+        let numero1 = Number(inpNumero1.value);
+        let numero2 = Number(inpNumero2.value);
+
+        while (numero1 <= numero2) {
+            if (numero1 % 2 == 0) {
+                exibirResultado.innerHTML += `${numero1} <br>`;   
+            } 
+            numero1 = numero1 + 1;
+        } 
+    }  
+</script>

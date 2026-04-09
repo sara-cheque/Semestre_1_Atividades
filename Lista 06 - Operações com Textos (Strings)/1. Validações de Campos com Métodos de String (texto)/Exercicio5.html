@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substituidor de Caracteres</title>
+</head>
+<body>
+
+    <h3>5. Substituidor de Caracteres</h3>
+
+    Digite sua senha: <br><br>
+    <Input id="inpSenha" oninput="Analisar()"></Input>
+    
+    <div id="exibirResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+        let senha = inpSenha.value
+        let senhaForte = senha
+            .replaceAll('A' , '@')
+            .replaceAll('a' , '@')
+            .replaceAll('E' , '3')
+            .replaceAll('e' , '3')
+        exibirResultado.innerHTML = senhaForte
+    }
+
+
+
+
+</script>

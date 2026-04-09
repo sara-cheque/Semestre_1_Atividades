@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 16. Treino de Musculação </title>
+</head>
+
+<body>
+    <h3>16. Treino de Musculação</h3>
+
+    Quantos dias você faz musculação:
+    <input type="text" id="inpDia"><br><br>
+
+    <button onclick="exibir()"> Exibir rotina mensal </button>
+    <div id="exibirResultado"></div>
+
+</body>
+
+</html>
+
+<script>
+    function exibir() { 
+        let dias = Number(inpDia.value);
+        let contador = 0;
+        let mensagem = '';
+
+        if (dias.toString.length == 1) {
+            while (contador < 30) {
+                contador++;
+
+                if (contador == 1 || (contador - 1) % dias == 0) {
+                    mensagem += `Dia ${contador} - Musculação <br>`
+
+                } else {
+                    mensagem += `Dia ${contador} - Comer, dormir <br>`
+
+                }
+
+            }
+            exibirResultado.innerHTML = mensagem;
+        }
+    }
+
+</script>

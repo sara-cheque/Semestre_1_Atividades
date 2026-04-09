@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleição</title>
+</head>
+<body>
+
+    <span style='font-size:100px;'>&#128223;</span>
+    
+    <h3>Eleição</h3>
+
+    Votos do candidato A: <input type="text" name="" id="candidatoA"> <br><br>
+    Votos do candidato B: <input type="text" name="" id="candidatoB"> <br><br>
+    Votos branco: <input type="text" name="" id="votoBranco"> <br><br>
+    Votos nulo: <input type="text" name="" id="votoNulo"> <br><br>
+
+    <button onclick="ResultadoEleicao()">Resultado na eleicão</button><br><br>
+
+    <B id="total"></B>
+    <p id="cdA"></p>
+    <p id="cdB"></p>
+    <p id="cdI"></p>
+
+</body>
+</html>
+
+<script>
+
+    function ResultadoEleicao(){
+        
+        let candA = Number(candidatoA.value)
+        let candB = Number(candidatoB.value)
+        let votoB = Number(votoBranco.value)
+        let votoN = Number(votoNulo.value)
+
+        let totalVotos = candA + candB + votoB + votoN
+
+        let pctCandA = (candA / totalVotos) * 100
+        let pctCandB = (candB / totalVotos) * 100
+        let pctInvalido = ((votoB + votoN) / totalVotos) * 100
+
+        total.innerHTML = (`Total de votos: ${totalVotos}`)
+        cdA.innerHTML = (`Candidato A: ${pctCandA}% `)
+        cdB.innerHTML = (`Candidato B: ${pctCandB}% `)
+        cdI.innerHTML = (`Ivalidos: ${pctInvalido}% `)
+    }
+    
+
+</script>
+
+ 

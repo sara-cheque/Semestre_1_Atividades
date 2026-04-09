@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe Social em Tuvalu</title>
+</head>
+<body>
+
+    <h3>2. Classe Social em Tuvalu: Em Qual Você se Encaixa?</h3>
+
+    Informe sua renda
+    <input type="text" id="inpRenda"> <br><br>
+
+    <button onclick="Analisar()">Analisar renda</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+        let renda = Number(inpRenda.value)
+
+        if (renda <= 250){
+            exibirResultado.innerHTML = `Classe E`
+        } else if (renda <= 900){
+            exibirResultado.innerHTML = `Classe D`
+        } else if (renda <= 2500) {
+            exibirResultado.innerHTML = `Classe C`
+        } else if (renda <= 9500){
+            exibirResultado.innerHTML = `Classe B`
+        } else {
+            exibirResultado.innerHTML = `Classe A`
+        }
+    }
+
+
+</script>

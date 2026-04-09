@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de notas </title>
+</head>
+<body>
+
+    <h3>Controle de notas </h3>
+
+    Nota 1
+    <input type="text" id="iptNota1"><br><br>
+
+    Nota 2
+    <input type="text" id="iptNota2"><br><br>
+
+    Nota 3
+    <input type="text" id="iptNota3"><br><br>
+
+    <button onclick="Analisar()">Analisar desempenho</button>
+
+    <p id="ExibirResultado"></p>
+
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+
+        let nota1 = Number(iptNota1.value)
+        let nota2 = Number(iptNota2.value)
+        let nota3 = Number(iptNota3.value)
+
+        let media = (nota1 + nota2 + nota3) / 3
+
+
+        if (media < 9.4){
+            ExibirResultado.innerHTML = (`Sua média foi de ${media.toFixed(2)}`)
+        } else {
+            ExibirResultado.innerHTML = (`Sua média foi de ${media.toFixed(2)} <br> Parabéns, você é fora de série!`)
+
+        }
+
+
+    }
+
+</script>

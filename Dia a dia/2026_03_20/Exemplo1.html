@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input_fruta">
+    <button onclick="Adicionar()">adicionar</button>
+    <div id="mensagem"></div>
+
+    <br><br>
+
+    posicao
+    <input type="text" id="inp_posicao">
+    <button onclick="Pesquisar()">Posicao</button>
+
+    
+</body>
+</html>
+
+<script>
+    let lista = [' uva ' , ' banana ']
+    mensagem.innerHTML  = lista
+    
+    function Adicionar(){
+
+        let fruta = input_fruta.value
+
+        lista.push(fruta)
+
+        mensagem.innerHTML  = `
+        Tamanho da lista:  ${lista.length} <br>
+        Primeira fruta: ${lista[0]} <br>
+        ultima lista: ${lista[lista.length - 1]} <br> <br>
+        lista: ${lista.toString().replaceAll(',' , '<br>')}
+        `
+
+    
+    }
+
+    function Pesquisar(){
+        let posicao = inp_posicao.value - 1
+
+        if (posicao < 0 || posicao >= lista.length){
+            alert('Insira um valor valido')
+        } else {
+            mensagem.innerHTML += `<br> ${posicao + 1}° Fruta: ${lista[posicao]}`
+
+        }
+    }
+
+    function Remover_ultima(){
+        let fruta_removida = lista.pop()
+    }
+
+    function incluiFruta(){
+        let fruta
+    }
+
+
+
+</script>

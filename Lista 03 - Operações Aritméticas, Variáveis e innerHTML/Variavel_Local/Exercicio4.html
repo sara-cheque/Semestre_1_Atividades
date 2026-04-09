@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+
+    <h2>Pizza!</h2>
+
+    valor da pizza:
+    <input style="width: 50px;" type="text" name="" id="pizzaValor"> <br><br>
+
+    Quantidade de amigos:
+    <input style="width: 50px;" type="text" name="" id="qtdAmigos"> <br><br>
+
+    <button onclick="btnPizza()">#LovePIZZA</button> <br><br>
+
+    <b id="resultadoValor"></b>
+    
+</body>
+</html>
+
+<script>
+
+    function btnPizza() {
+
+        let valor = Number(pizzaValor.value)
+        let amigos = Number(qtdAmigos.value)
+
+        let resultado = valor / amigos
+
+        resultadoValor.innerHTML = (`Cada um dos ${amigos} amigos vai pagar R$ ${resultado}`)
+
+    }
+
+</script>

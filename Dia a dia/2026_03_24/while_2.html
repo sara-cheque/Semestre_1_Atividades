@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while2</title>
+</head>
+<body>
+
+    <button onclick="Contar()">Contar de 10 a 1</button>
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    let contador = 11
+
+    function Contar(){
+        while (contador >  1){
+            contador--
+            exibirResultado.innerHTML += `<br> ${contador}`
+        } 
+    }
+
+
+
+</script>

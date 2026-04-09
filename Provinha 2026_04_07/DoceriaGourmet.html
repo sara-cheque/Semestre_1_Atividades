@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doceria</title>
+</head>
+
+<body>
+
+    <h3>Doceria Gourmet</h3>
+
+    Quantidade de Macarrons e preço <br><br>
+    <input type="text" id="inpQtdMacarron" placeholder="3">
+    <input type="text" id="inpPrecoMacarron" placeholder="$00,00"><br><br>
+
+    Quantidade de Brigadeiro gourmet e preço <br><br>
+    <input type="text" id="inpQtdBrigadeiro" placeholder="3">
+    <input type="text" id="inpPrecoBrigadeiro" placeholder="$00,00"><br><br>
+
+    Quantidade de Cupcake e preço <br><br>
+    <input type="text" id="inpQtdCupcake" placeholder="3">
+    <input type="text" id="inpPrecoCupcake" placeholder="$00,00"><br><br>
+
+    Quantidade de Cheseecake e preço <br><br>
+    <input type="text" id="inpQtdCheseecake" placeholder="3">
+    <input type="text" id="inpPrecoCheseecake" placeholder="$00,00"><br><br>
+
+    <button onclick="Verficar()">Verificar vendas</button>
+
+    <div id="exibirResultado"></div>
+
+</body>
+
+</html>
+<script>
+
+    let precoMacarron = 0
+    let qtdMacarron = 0
+    let precoBrigadeiro = 0 
+    let qtdBrigadeiro = 0
+    let precoCupcake = 0
+    let qtdCupcake = 0
+    let precoCheseecake = 0
+    let qtdCheseecake = 0
+
+    function Verficar() {
+
+        let fotoMacarron = `<img src="https://lovefoodfeed.com/wp-content/uploads/2023/01/Macarons-px-1200-01-1.jpg" alt="" width="100" height="100">`
+        let fotoBrigadeiro = `<img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Brigadeiro.jpg" alt="" width="100" height="100">`
+        let fotoCupacake = `<img src="https://glasshouse.qld.edu.au/wp-content/uploads/2017/07/trio-edit-2.jpg" alt="" width="100" height="100">`
+        let fotoCheseecake = `<img src="https://stateofdinner.com/wp-content/uploads/2023/03/philadelphia-cheesecake-featured.jpg" alt="" width="100" height="100">`
+
+        precoMacarron = Number(inpPrecoMacarron.value)
+        qtdMacarron = Number(inpQtdMacarron.value)
+
+        precoBrigadeiro = Number(inpPrecoBrigadeiro.value)
+        qtdBrigadeiro = Number(inpQtdBrigadeiro.value)
+
+        precoCupcake = Number(inpPrecoCupcake.value)
+        qtdCupcake = Number(inpQtdCupcake.value)
+
+        precoCheseecake = Number(inpPrecoCheseecake.value)
+        qtdCheseecake = Number(inpQtdCheseecake.value)
+
+
+        if (qtdMacarron >= 0 && qtdBrigadeiro >= 0 && qtdCupcake >= 0 && qtdCheseecake >= 0) {
+
+            let precoTotalMacarron = precoMacarron * qtdMacarron
+            let precoTotalBrigadeiro = precoBrigadeiro * qtdBrigadeiro
+            let precoTotalCupcake = precoCupcake * qtdCupcake
+            let precoTotalCheseecake = precoCheseecake * qtdCheseecake
+
+            let valorTotal = precoTotalMacarron + precoTotalBrigadeiro + precoTotalCupcake + precoTotalCheseecake
+
+            let contador = 1
+
+            for (let i = 1; i <= qtdMacarron; i++) {
+                exibirResultado.innerHTML += `<br> <br> Venda ${contador} - ${fotoMacarron} - R$${precoMacarron}`
+                contador++
+            }
+            for (let j = 1; j <= qtdBrigadeiro; j++) {
+                exibirResultado.innerHTML += `<br> <br> Venda ${contador} - ${fotoBrigadeiro} - R$${precoBrigadeiro}`
+                contador++
+            }
+            for (let k = 1; k <= qtdCupcake; k++) {
+                exibirResultado.innerHTML += `<br> <br> Venda ${contador} - ${fotoCupacake} - R$${precoCupcake}`
+                contador++
+            }
+            for (let l = 1; l <= qtdCheseecake; l++) {
+                exibirResultado.innerHTML += `<br> <br> Venda ${contador} - ${fotoCheseecake} - R$${precoCheseecake}`
+                contador++
+            }
+            
+            if (contador >= 1) {
+                exibirResultado.innerHTML += `<br> <br> Com a quantidade de ${qtdMacarron} Macarons, ${qtdBrigadeiro} Brigadeiros, ${qtdCupcake} Cupcakes e ${qtdCheseecake} Cheesecakes, a venda totalizara $${valorTotal}`
+            }
+
+        } else {
+            alert(`ERRO: Insira um valor valido`)
+        }
+    }
+
+
+
+</script>

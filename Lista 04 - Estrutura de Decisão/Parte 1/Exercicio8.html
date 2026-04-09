@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheque especial </title>
+</head>
+<body>
+
+    <h3>Cheque especial </h3>
+
+    Saldo da conta
+    <input type="text" id="iptSaldo"> <br><br>
+
+    Valor de debito 
+    <input type="text" id="iptDebito"><br><br>
+
+    <button onclick="Analisar()">Analisar conta</button>
+
+    <p id="ExibirResultado"></p>
+    
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+        let saldo = Number(iptSaldo.value)
+        let debito = Number(iptDebito.value)
+
+        let conta = saldo - debito
+
+        if (conta < 0 ){
+            ExibirResultado.innerHTML = (` <br> <span style = color:red> <b> O saldo atual da conta corrente é ${conta}</b></span>`)
+        } else{
+            ExibirResultado.innerHTML = (`O saldo atual da conta corrente é ${conta}`)
+
+        }
+
+
+
+    }
+
+
+</script>

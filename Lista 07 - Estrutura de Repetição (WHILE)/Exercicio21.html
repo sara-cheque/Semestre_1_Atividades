@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21. Divisibilidade</title>
+</head>
+<body>
+
+    <!-- 
+        21. Divisibilidade
+        Crie  um programa o qual:
+
+        a) Receba um número positivo do usuário, que é o limite da contagem;
+
+        b) Receba um segundo número, para testes de divisibilidade, 
+        que deve estar entre 1 e o número informado em a);
+
+        c) Ao clicar em "Somar Números", deve exibir todos os números múltiplos do número informado em b) 
+        entre 1 e o número informado em a); 
+
+        d) Ao final da contagem, exiba a frase "Soma dos Múltiplos: X", 
+        sendo X a soma de todos os números múltiplos do número informado pelo usuário
+    -->
+
+    <h3>21. Divisibilidade</h3>
+
+    Insira o primeiro numero <br> <br>
+    <input type="text" id="inpNum1"> <br><br>
+
+    Insira o primeiro numero (deve ser menor que o primeiro número) <br> <br>
+    <input type="text" id="inpNum2"> <br><br>
+
+    <button onclick="somar()">Somar numeros</button> <br><br>
+
+    <div id="exibirResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function somar(){
+        let numero1 = Number(inpNum1.value)
+        let numero2 = Number(inpNum2.value)
+    
+        let soma = 0
+
+        while (numero2 < numero1){
+            
+            if (numero1 % numero2 == 0){
+                exibirResultado.innerHTML += numero1
+                soma+= numero1
+            }
+            numero2++
+        }
+    }
+
+
+
+</script>

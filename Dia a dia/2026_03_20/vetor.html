@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   Fruta: 
+   <input type="text" id="input_fruta">
+   <button onclick="adicionar()">Adicionar Fruta</button>
+   <button onclick="analisar()">Analisar Lista</button>
+   <button onclick="removerUltima()">Remover Última Fruta</button>
+   <button onclick="incluiFruta()">Verificar Se Inclui Fruta</button>
+
+   <hr>
+
+   Posição na Lista: 
+   <input type="text" id="input_posicao"> 
+   <button onclick="pesquisar()">Pesquisar</button>
+
+   <hr>
+
+   <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+   let listaVazia = []; // declara um vetor, que não possui nenhum registros
+   
+   let lista = ['uva', 'banana']; // declara um vetor, com dois textos registrados
+   
+   function adicionar() {
+      let fruta = input_fruta.value; // captura o valor inserido
+      lista.push(fruta); // adiciona a nova fruta no vetor
+      div_mensagem.innerHTML = `${lista}`; // exibe a lista inteira, aplicando o ".toString()" para conversão de texto e interpolação
+   }
+
+   function analisar() {
+      div_mensagem.innerHTML = `
+         Tamanho: ${lista.length} <br>
+         Primeira Fruta: ${lista[0]} <br>
+         Última Fruta: ${lista[ lista.length -1 ]} <br>
+         Lista: <br> ${lista.toString().replaceAll(',', '<br>')}
+      `;
+
+      /*
+         "lista.length": sempre representa o "tamanho da lista"
+         
+         "lista[X]": acessa o índice X da lista, sendo o primeiro índice sempre o "0".
+         - a última posição válida da lista sempre será "lista.length - 1", assim como nos caracteres dos textos
+
+         "lista.toString()": converte a lista para um texto (assim como exibimos em "adicionar()", que aplica o .toString() por padrão)
+         - após a conversão para texto, usamos o método "replace" para substituir as vírgulas por quebra de linha
+      */
+   }
+
+   function incluiFruta() {
+      let fruta = input_fruta.value;
+      // let inclui = lista.includes(fruta); // exemplo de armazenamento da validação em variável
+
+      // verifica se a lista inclui a fruta desejada
+      if ( lista.includes(fruta) ) {
+         div_mensagem.innerHTML = `A fruta ${fruta} existe na posição ${lista.indexOf(fruta) + 1}`; 
+         // lista.indexOf(fruta) busca o índice atual da fruta, com +1 exibimos a "posição certa" para o usuário final (se é o índice "0", mostramos "1")
+      } else {
+         div_mensagem.innerHTML = `A fruta ${fruta} NÃO EXISTE na lista`;
+      }
+   }
+
+   function pesquisar () {
+      let posicao = input_posicao.value;
+
+      // validamos se a posição informada está dentro dos valores da lista
+      if (posicao <= 0 || posicao > lista.length) {
+         alert('Posição inválida!');
+         div_mensagem.innerHTML = '';
+      } else {
+         div_mensagem.innerHTML = `Fruta: ${lista[posicao - 1]}`; // reduzimos a posição informada em 1
+         // se o usuário informa que quer ver a "1"ª fruta, acessamos o índice "0" da lista
+      }
+   }
+
+   function removerUltima() {
+      let frutaRemovida = lista.pop(); // remove o último elemento da lista e retorna esse valor para armazenar na variável
+
+      div_mensagem.innerHTML = `
+         Fruta Removida: ${frutaRemovida}<br>   
+         Lista: <br> ${lista.toString().replaceAll(',', '<br>')
+      }`;
+
+      // novamente, convertemos a lista para texto com ".toString()" e aplicamos o replace para trocar vírgula por <br>
+   }
+</script>

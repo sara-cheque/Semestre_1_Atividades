@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12. Resto da Divisão por 5</title>
+</head>
+<body>
+
+    <h3>12. Resto da Divisão por 5</h3>
+
+    Insira um numero
+    <input type="text" id="inpNumero"> <br><br>
+
+    <button onclick="Calcular()">Múltiplo de 5</button> <br><br>
+
+    <div id="exibirResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function Calcular(){
+
+        let numero = Number(inpNumero.value)
+        let calculo = numero % 5
+
+        console.log(calculo)
+
+        if (numero > 0 ){
+            if (calculo == 0 ){
+                exibirResultado.innerHTML = `Perfeito, esse número é múltiplo de cinco`
+            } else if (calculo == 1){
+                exibirResultado.innerHTML = `Vich, sobrou um`
+            } else if (calculo == 2){
+                exibirResultado.innerHTML = `Para esse o resto é dois`
+            } else if (calculo == 3){
+                exibirResultado.innerHTML = `Com mais dois daria certo`
+            } else {
+                exibirResultado.innerHTML = `Só faltou 1 para ser múltiplo de 5`
+            }
+        } else {
+            alert(`Digite um número maior que zero`)
+        }
+
+
+
+
+
+    }
+
+
+
+
+</script>

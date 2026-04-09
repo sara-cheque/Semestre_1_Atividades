@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Palavra Secreta</title>
+</head>
+<body>
+
+    <h3>8. Jogo da Palavra Secreta</h3>
+
+    Insira sua palavra (4 letras) <br><br>
+    <input type="text" id="inpLetra" oninput="verificar()"> <br><br>
+
+    <div id="exibirResultado1"></div>
+    <div id="exibirResultado2"></div>
+    <div id="exibirResultado3"></div>
+    <div id="exibirResultado4"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+        let palavra = 'joga'
+        let letra = inpLetra.value
+        letra = letra.toLowerCase()
+
+        if (letra.includes('j')){
+            exibirResultado1.innerHTML = `<br> A letra J aparece na palavra secreta!`
+        }
+        if (letra.includes('o')){
+            exibirResultado2.innerHTML = `<br> A letra O aparece na palavra secreta!`
+        }
+        if (letra.includes('g')){
+            exibirResultado3.innerHTML = `<br> A letra G aparece na palavra secreta!`
+        }
+        if (letra.includes('a')){
+            exibirResultado4.innerHTML = `<br> A letra A aparece na palavra secreta!`
+        }
+
+        if(palavra == letra){
+            exibirResultado1.innerHTML = "Parabéns, a palavra secreta é JOGA"
+            exibirResultado2.innerHTML = ""
+            exibirResultado3.innerHTML = ""
+            exibirResultado4.innerHTML = ""
+        }
+    }
+
+</script>

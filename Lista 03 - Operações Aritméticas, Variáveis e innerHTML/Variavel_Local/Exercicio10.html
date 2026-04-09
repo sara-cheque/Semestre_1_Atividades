@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dividindo a pizza e a caixinha do entregado</title>
+</head>
+<body>
+
+    <h3>Dividindo a pizza e a caixinha do entregado</h3>
+
+    Sabor da pizza:
+    <input type="text" id="saborPizza"><br><br>
+
+    Preço da pizza:
+    <input type="text" id="precoPizza"><br><br>
+
+    Quantidade de amigos:
+    <input type="text" id="qtdAmigos"><br><br>
+
+    <button onclick="valorAmigo()">Ver valor por amigo</button><br><br>
+
+    <b id="ExibirResultado"></b>
+
+    
+</body>
+</html>
+
+<script>
+
+    function valorAmigo(){
+
+        let sabor = saborPizza.value
+        let preco = Number(precoPizza.value)
+        let amigos = Number(qtdAmigos.value)
+
+        let caixaValor = ((preco * 10) / 100) + preco
+        let valorFinal = caixaValor / amigos
+
+        ExibirResultado.innerHTML = (`Cada amigo vai colaborar com R$${valorFinal} para a pizza de ${sabor}.`)  
+        
+
+    }
+
+
+</script>

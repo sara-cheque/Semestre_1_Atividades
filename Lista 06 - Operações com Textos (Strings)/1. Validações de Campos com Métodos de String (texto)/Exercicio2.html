@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Palavras</title>
+</head>
+<body>
+
+    <h3>2. Detector de Palavras</h3>
+
+    Insira sua frase <br> <br>
+    <input type="text" id="inpFrase"> <br><br>
+
+    <button onclick="Analisar()">Analisar frase</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+        let frase = inpFrase.value
+        let contem_teste = frase.includes("teste")
+        let contem_abc = frase.includes("abc")
+        let contem_span = frase.includes("span")
+
+
+        if (contem_teste || contem_abc || contem_span){
+            exibirResultado.innerHTML = " <span style = 'color:red' >Frase invalida </span>"
+        } else {
+            exibirResultado.innerHTML = "<span style = 'color:green'>Frase valida </span>" 
+        }
+    }
+
+
+</script>

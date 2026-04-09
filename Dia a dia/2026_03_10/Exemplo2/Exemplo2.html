@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    digite sua idade
+    <input type="text" id="iptIdade"> <br><br>
+
+    Acompanhado
+    <input type="text" id="iptAcompanhado"><br><br>
+
+    <button onclick="Validar()">Validar</button>
+    
+    
+</body>
+</html>
+
+<script>
+
+    function Validar() {
+        let idade = Number(iptIdade.value)
+        let acompanhado = iptAcompanhado.value
+
+        if (idade >= 18 || acompanhado == 'sim'){
+            alert('Pode entrar')
+        } else {
+            alert('barrado')
+        }
+    }
+
+</script>

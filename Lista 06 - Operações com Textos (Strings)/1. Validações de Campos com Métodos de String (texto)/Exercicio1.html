@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Caracteres</title>
+</head>
+<body>
+
+    <h3>1. Contador de Caracteres</h3>
+
+    Digite sua Frase
+    <input type="text" id="inpFrase"> <br><br>
+
+    <button onclick="Analisar()">Analisar frase</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+        let frase = inpFrase.value
+        let tamanho  = frase.length
+
+        exibirResultado.innerHTML = `Tamanho da frase: ${tamanho}`
+        
+        if (tamanho <= 10){
+            exibirResultado.innerHTML += `
+            <br> <span style = 'color:red'>
+                Frase curta
+            </span>`
+        }else {
+            exibirResultado.innerHTML += `
+            <br> <span style = 'color:blue'>
+                Frase longa
+            </span>`       
+        }
+
+
+    }
+
+
+</script>

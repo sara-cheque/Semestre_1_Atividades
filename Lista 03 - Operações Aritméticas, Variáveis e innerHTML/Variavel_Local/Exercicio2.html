@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aposentadoria</title>
+</head>
+<body>
+
+    <h1>Aposentadoria</h1>
+
+    <b>Idade:</b>
+    <input type="number" id="Idade"><br><br>
+
+    <button onclick="homem()">Aposentadoria Homem</button>
+    <button onclick="mulher()">Aposentadoria Mulher</button><br><br>
+
+    <b>Falta:</b>
+    <b id="TempoFalta"></b>
+    
+</body>
+</html>
+
+<script>
+
+    function homem(){
+
+        let idade =  Number(Idade.value);
+        let resultado = 70 - idade
+
+        document.getElementById("TempoFalta").innerText = resultado
+    }
+    
+    function mulher(){
+
+        let idade = Number(Idade.value);
+        let resultado = 60 - idade
+
+        document.getElementById("TempoFalta").innerText = resultado 
+    }
+
+
+</script>

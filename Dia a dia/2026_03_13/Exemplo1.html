@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <select id="select_marca">
+        <option disabled selected value="#">1 marca</option>
+        <option value="2">2 marca</option>
+        <option value="3">3 marca</option>
+    </select>
+
+    <button onclick="selecionar()">selecionar</button>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function selecionar(){
+        let marca = select_marca.value;
+
+        if (marca == "#"){
+            alert("Selecione uma marca valida")
+            exibirResultado.innerHTML = ""
+        } else {
+            exibirResultado.innerHTML = `Marca selecionada ${marca}`
+        }
+    }
+
+</script>

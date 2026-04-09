@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Representação do humor do usuário </title>
+</head>
+<body>
+
+    <h3>14. Representação do humor do usuário </h3>
+
+    Como você esta hoje? <br><br>
+    <input type="text" id="inpHumor"> <br><br>
+
+    <button onclick="Humor()">Mostrar Humor</button>
+
+    <p id="exibirResultado"></p>
+
+    
+</body>
+</html>
+
+<script>
+
+    function Humor(){
+        let humor = inpHumor.value
+
+        if (humor == `Feliz`){
+            exibirResultado.innerHTML = `<span style='font-size:100px;'>&#128513;</span>`
+        } else if (humor == `Triste`){
+            exibirResultado.innerHTML = `<span style='font-size:100px;'>&#128557;</span>`
+        } else if (humor == `Bravo`){
+            exibirResultado.innerHTML = `<span style='font-size:100px;'>&#128545;</span>`
+        } else if (humor == `Surpreso`){
+            exibirResultado.innerHTML = `<span style='font-size:100px;'>&#128562;</span>`          
+        } else if (humor == `Cansado`){
+            exibirResultado.innerHTML = `<span style='font-size:100px;'>&#128565;</span>`           
+        }
+    }
+
+</script>

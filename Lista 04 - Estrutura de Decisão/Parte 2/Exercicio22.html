@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de temperatura</title>
+</head>
+<body>
+
+    <h3>Análise de temperatura</h3>
+
+    Temperatuda do ambiente
+    <input type="text" id="inpTemperatura"> <br><br>
+
+    <button onclick="Verificar()">Verificar clima</button> <br><br><br><br>
+
+    <img id="img"  style="width: 300px">
+
+</body>
+</html>
+
+<script>
+
+    function Verificar(){
+        let temperatura = Number(inpTemperatura.value)
+
+        if (temperatura > 10){
+            img.src = 'https://img.freepik.com/fotos-premium/alimentos-estragados-e-estragados-com-mofo-macas-pimentoes-queijo-duro-e-banan-em-fundo-cinza-close-up_130716-3092.jpg'
+        } else {
+            img.src = 'https://encolombia.com/wp-content/uploads/2021/03/Productos-de-Origen-Vegetal-y-Animal-696x398.jpg'
+        }
+
+    }
+
+
+
+</script>

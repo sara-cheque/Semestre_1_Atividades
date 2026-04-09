@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou Impar</title>
+</head>
+<body>
+    
+    <h3>Par ou Impar</h3>
+
+    Digite seu número
+    <input type="text" id="inpNumero"> <br><br>
+
+    <button onclick="Analisar()">Analisar</button> <BR></BR>
+
+    <div id="exibirResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+        let numero = Number(inpNumero.value)
+        let resultado =  numero % 2
+
+        if (resultado == 0){
+            exibirResultado.innerHTML = `
+            <span style = 'color:red ; background-color: yellow'>
+                Esse número é PAR
+            </span>`
+        }else {
+            exibirResultado.innerHTML = `
+            <span style = 'color:blue'> <b>
+                Esse número é IMPAR
+            </b> </span>`  
+        }
+
+    }
+
+</script>

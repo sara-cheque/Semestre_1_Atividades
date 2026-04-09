@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mercado BOM DOCE</title>
+</head>
+<body>
+
+    <h3>Mercado BOM DOCE</h3>
+
+    Quantidade de chocolates comprados <br><br>
+    <input type="text" id="inp_chocolate"> <br><br>
+
+    <button onclick="Compra()">Compra</button><br><br>
+
+    <div id="exibirResultado"></div>
+
+    
+</body>
+</html>
+
+<script>
+
+    function Compra(){
+       let preco = 3
+       let quantidade = Number(inp_chocolate.value)
+       let precoTotal = 0
+
+       if (quantidade > 12) {
+        preco = 2.5
+       }
+
+       precoTotal = quantidade * preco
+
+       exibirResultado.innerHTML = `o valor da sua compra foi de ${precoTotal}`
+
+    }
+
+
+
+
+</script>

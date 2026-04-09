@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro Mensal de uma empresa</title>
+</head>
+<body>
+
+    <h3>Controle Financeiro Mensal de uma empresa</h3>
+
+    Valor da venda de peças
+    <input type="text" id="valorPecas"> <br><br>
+
+    Valor do seriviço
+    <input type="text" id="valorServico"><br><br>
+
+    Valor percentual dos impostos
+    <input type="text" id="valorImposto"><br><br>
+
+    Valor dos gastos do mês
+    <input type="text" id="valorMes"><br><br>
+
+    <button onclick="Acumular()">Acumular</button><br><br>
+
+    <p id="ExibirResultado1"></p>
+
+</body>
+</html>
+
+<script>
+
+    let mes = 0
+    let valorTotal = 0
+
+    function Acumular(){
+        
+        mes += 1
+        let peca = Number(valorPecas.value)
+        let servico = Number(valorServico.value)
+        let imposto = Number(valorImposto.value)
+        let gastoMes = Number(valorMes.value)
+
+        let A_valoresRecebidos = (peca + servico)
+        let B_imposto = (A_valoresRecebidos * imposto) / 100 //
+        let C_gasto = (A_valoresRecebidos - B_imposto - gastoMes ) //
+
+        valorTotal += C_gasto
+
+        ExibirResultado1.innerHTML += (`
+        Resumo do mês ${mes} <br>
+        Total recebido = R$${A_valoresRecebidos} <br>
+        Valor do Imposto = R$${B_imposto} <br>
+        Saldo Final de R$${C_gasto} <br>
+        Acumulado até o Momento = R$${valorTotal} <br> <br>
+        `)
+    }
+
+</script>

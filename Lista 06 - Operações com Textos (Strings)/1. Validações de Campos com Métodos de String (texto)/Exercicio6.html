@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observador de Índices</title>
+</head>
+<body>
+
+    <h3>6. Observador de Índices</h3>
+
+    Digite sua frase <br><br>
+    <input type="text" id="inpFrase" oninput="Analisar()"> <br><br>
+
+    Insira a posição da sua letra
+    <input type="text" id="inpNumero"> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+        let frase = inpFrase.value
+        let posicao = inpNumero.value
+        
+        let tamanho = frase.length
+        
+        let posicao_inicial = frase[0]
+        let posicao_requerida = frase[posicao - 1]
+        let posicao_final = (frase[tamanho - 1])
+        
+        exibirResultado.innerHTML = `
+        <br> A primeira letra é: ${posicao_inicial}
+        <br>  A ${posicao}ª letra é: ${posicao_requerida}
+        <br> A última letra é:  ${posicao_final}`
+
+    }
+
+
+
+
+</script>

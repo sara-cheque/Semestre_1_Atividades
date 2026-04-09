@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caça às Frutas</title>
+</head>
+<body>
+
+    <h3>1. Caça às Frutas: Descubra se está na Lista</h3>
+
+    Digite sua fruta <br><br>
+    <input type="text" id="inpFruta">  <br><br>
+
+    <button onclick="pesquisar()">Pesquisar</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    let lista = ['banana', 'maça', 'pera', 'abacate']
+
+    function pesquisar(){
+        let fruta = inpFruta.value
+        fruta = fruta.toLowerCase()
+
+        if (lista.includes(fruta)){
+            exibirResultado.innerHTML = `A fruta ${fruta} existe na lista`
+        } else {
+            exibirResultado.innerHTML = `Não existe a fruta ${fruta} na lista.`
+        }
+
+    }
+
+</script>

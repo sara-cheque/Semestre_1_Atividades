@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desempenho Escolar</title>
+</head>
+<body>
+
+    <h3>6. Desempenho Escolar: O Aluno Foi Aprovado?</h3>
+
+    Insira a nota do Aluno
+    <input type="text" id="inp_nota"> <br><br>
+
+    Insira a frequencia do Aluno
+    <input type="text" id="inp_frequencia"> <br><br>
+
+    <button onclick="Analisar()">Analisar aluno</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+        let nota = Number(inp_nota.value)
+        let frequencia = Number(inp_frequencia.value)
+
+        if (nota < 0 || nota > 10) {
+            alert('Onde já se viu nota <0 ou >10?!')
+            document.getElementById('inp_nota').value = '';
+            document.getElementById('inp_frequencia').value = '';
+        } else if (frequencia < 0 || frequencia > 100){
+            alert('Onde já se viu frequência <0 ou >100?!')
+            document.getElementById('inp_nota').value = '';
+            document.getElementById('inp_frequencia').value = '';
+        } else {
+            if (frequencia >= 75){
+                if (nota < 6){
+                    exibirResultado.innerHTML = `Aluno ficou abaixo da média`
+                } else if (nota >= 6 && nota < 8){
+                    exibirResultado.innerHTML = `Aluno ficou na média`
+                } else {
+                    exibirResultado.innerHTML = `Aluno acima da média`
+                }
+                exibirResultado.innerHTML += `<br> Aluno aprovado por frequência`
+            } else {
+                exibirResultado.innerHTML = `Aluno reprovado por frequência`
+            }
+        }
+    }
+
+</script>

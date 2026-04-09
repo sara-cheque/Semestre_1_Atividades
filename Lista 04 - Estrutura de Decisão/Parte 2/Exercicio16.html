@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de peso no elevador - v2</title>
+</head>
+<body>
+
+    <h3>Controle de peso no elevador - v2</h3>
+
+    Quantidade de homens
+    <input type="text" id="inpQtdHomem"> <br><br>
+
+    Quantidade de mulheres
+    <input type="text" id="inpQtdMulher"> <br><br>
+
+    <button onclick="Ligar()">Ligar elevador</button>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function Ligar(){
+
+        let qtdHomem = Number(inpQtdHomem.value)
+        let qtdMulher = Number(inpQtdMulher.value)
+
+        let pesoHomem = qtdHomem * 90
+        let pesoMulher = qtdMulher * 70
+
+        let pesoTotal = pesoHomem + pesoMulher
+        let pesoMaximo = 500
+
+        if (pesoTotal <= pesoMaximo){
+            exibirResultado.innerHTML = 
+                `<span style = color:green>
+                    Elevador vai se mover, pois está com ${pesoTotal}kg
+                </span>`
+        } else{
+
+            let pesoNecessario = pesoTotal - pesoMaximo
+
+            exibirResultado.innerHTML = 
+                `<span style = color:red>
+                    Alguém precisa descer. Precisa perder ${pesoNecessario}kg para mover o elevador 
+                </span>`
+
+        }
+
+    }
+
+
+</script>

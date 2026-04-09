@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Expressar amor</title>
+</head>
+<body>
+
+    <h3>4. Expressar amor</h3>
+
+    O nome da pessoa que você ama:
+    <input type="text" id="amooor"> <br><br>
+
+    O quanto você ama essa pessoa?
+    <input type="text" id="qtdAmor"> <br><br> 
+
+    <button onclick="amor()">Expressar amor</button> <br><br>
+
+    <div id="exibirResultado"></div>
+
+    
+    
+</body>
+</html>
+
+<script>
+
+    function amor(){
+        let nome = amooor.value
+        let quantidade = qtdAmor.value
+
+        let contador = 0
+        let mensagem = ''
+
+
+        while (contador < quantidade){
+            contador++
+            mensagem += `<br>${contador} - ${nome}, eu te amo! Sempre  lembre disso!`
+
+        }
+
+        exibirResultado.innerHTML = mensagem
+
+
+        
+    }
+
+
+</script>

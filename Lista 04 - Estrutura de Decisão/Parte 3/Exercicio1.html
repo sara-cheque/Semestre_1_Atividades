@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura e Esportes: Descubra Sua Vantagem Competitiva</title>
+</head>
+<body>
+
+    <h3>1. Altura e Esportes: Descubra Sua Vantagem Competitiva</h3>
+    
+    Insira sua altura
+    <input type="text" id="inpAltura"> <br><br>
+
+    <button onclick="Analisar()">Analisar estatura</button> <br><br>
+
+    <div id="exibirResultado"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+        let altura = Number(inpAltura.value)
+
+        if (altura <= 1.65){
+            exibirResultado.innerHTML = 'Você pode ser piloto de corrida'
+        } else if (altura <= 1.80) {
+            exibirResultado.innerHTML = 'Você pode ser jogador de futebol'
+        } else {
+            exibirResultado.innerHTML = 'Você pode ser jogador de vôlei ou basquete'
+
+        }
+    }
+
+
+</script>

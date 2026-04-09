@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Palavras</title>
+</head>
+<body>
+
+    <h3>4. Comparador de Palavras</h3>
+
+    Digite dua primeira palavra <br><br>
+    <input type="text" id="inpPalavra1"> <br><br>
+
+    Digite sua segunda palavra <br><br>
+    <input type="text" id="inpPalavra2"> <br><br>
+
+    <button onclick="Analisar()">Analisar palavras</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+        let palavra1 = inpPalavra1.value
+        let palavra2 = inpPalavra2.value
+
+        let upperPalavra1 = palavra1.toUpperCase()
+        let upperPalavra2 = palavra2.toUpperCase()
+    
+        if (palavra1 == palavra2){
+            exibirResultado.innerHTML = `As palavras ${palavra1} e ${palavra2} são exatamente iguais!`
+        }
+        else if (upperPalavra1 == upperPalavra2){
+            exibirResultado.innerHTML = ` As palavras ${palavra1} e ${palavra2} possuem o mesmo conteúdo, mas a digitação é diferente (maiúsculas e minúsculas)`
+        } else {
+            exibirResultado.innerHTML = `As palavras ${palavra1} e ${palavra2} são completamente diferentes!`
+            
+        }
+    }
+
+
+
+
+</script>

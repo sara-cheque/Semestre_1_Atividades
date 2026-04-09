@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de frequência do aluno</title>
+</head>
+<body>
+
+    <h3>Análise de frequência do aluno</h3>
+
+    Frequencia do aluno
+    <input type="text" id="inpFrequencia"> <br><br>
+
+    <button onclick="Analisar()">Analisar frequencia</button> <br><br> <br><br>
+    
+    <img id="img" style="width: 300px;">
+    
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+        let frenquencia = Number(inpFrequencia.value)
+        
+        if (frenquencia > 50){
+            img.src='https://thumbs.dreamstime.com/z/escrita-da-crian%C3%A7a-da-escola-estudante-child-learn-na-sala-de-aula-menino-novo-dentro-57852631.jpg'
+        } else {
+            img.src='https://ilovetravelling.info/wp-content/uploads/2020/02/best-places-featured.jpg'
+        }
+    }
+
+
+
+</script>

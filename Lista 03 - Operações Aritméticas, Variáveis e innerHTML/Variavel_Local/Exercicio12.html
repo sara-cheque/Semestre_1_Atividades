@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Ki dos Sayajins! </title>
+</head>
+<body>
+
+    <h3>O Ki dos Sayajins! </h3>
+
+    Ki base do seu guerreiro: 
+    <input type="text" id="kiBase"><br><br>
+
+
+    <h4>Tranformar em...</h4>
+
+
+    <button onclick="SSJ()" style="background-color: rgb(232, 215, 86)">SSJ</button>
+    <button onclick="SSJ2()" style="background-color: rgb(232, 174, 86)">SSJ2</button>
+    <button onclick="SSJ3()" style="background-color: rgb(232, 101, 86)">SSJ3</button>
+
+    <p id="ExibirResultado"></p>
+    
+</body>
+</html>
+
+<script>
+ 
+    //let baseX = 0
+
+    function SSJ(){
+        let base = Number(kiBase.value)
+        //let baseX = baseX + (base * 50)
+        let baseX = (base * 50)
+        ExibirResultado.innerHTML = (`Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${baseX} `)
+    }
+
+    function SSJ2(){
+        let base = Number(kiBase.value)
+        let baseX = (base * 100)
+        ExibirResultado.innerHTML = (`Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${baseX} `)
+    }
+
+    function SSJ3(){
+        let base = Number(kiBase.value)
+        let baseX = (base * 200)
+        ExibirResultado.innerHTML = (`Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${baseX} `)
+    }
+
+
+</script>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senha Forte ou Fraca</title>
+</head>
+<body>
+    <h3>7. Senha Forte ou Fraca</h3>
+ 
+    Digite sua senha <br><br>
+
+    <input type="text" id="inp_senha" oninput="senha()"> <br><br>
+
+    <div id="exibirResultado"></div>
+</body>
+</html>
+
+<script>
+
+
+    let forca = 0
+    let controleTamanho = true
+    let controleUpper = true
+    let controleLower = true
+
+    function senha(){
+        let senha = inp_senha.value
+        let tamanhoSenha = senha.length
+
+
+        console.log('Forca  ' + forca)
+
+        if (tamanhoSenha > 8 && controleTamanho){
+            forca++
+            controleTamanho = false
+        }
+        
+        if (senha != senha.toUpperCase() && controleUpper){
+            forca++
+            controleUpper = false
+        }
+        
+        if (senha != senha.toLowerCase() && controleLower){
+            forca++
+            controleLower = false
+        }
+
+        if (forca == 0){
+            exibirResultado.innerHTML = `Insegura`
+        } else if (forca == 1){
+            exibirResultado.innerHTML = `Fraca`
+        } else if (forca == 2){
+            exibirResultado.innerHTML = `Média`
+        } else {
+            exibirResultado.innerHTML = `Forte`
+        }
+
+
+        
+
+    }
+
+
+
+</script>

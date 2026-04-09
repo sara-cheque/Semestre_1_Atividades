@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Projeto PI -  Sara</title>
+</head>
+<body>
+
+    <h3>Calculadora financeira</h3>
+
+
+    Gasto total:
+    <input style="width: 80px" type="text" id="Inp_valorGasto" placeholder=" 2700 ">  <br><br>
+
+    Porcentagem de perda:
+    <input style="width: 40px" type="text" id="inp_percPerda" placeholder="23"><br><br>
+
+    <button onclick="CalcularPerda()">Calcular Prejuizo </button>
+    <button onclick="CalcularGanho()">Calcular Ganho</button>
+
+    <p id="ExibirResultado1"></p>
+    <p id="ExibirResultado2"></p>
+    
+    
+</body>
+</html>
+
+<script>
+
+    function CalcularPerda(){
+        let valorGasto = Number(Inp_valorGasto.value)
+        let percPerda = Number(inp_percPerda.value)
+
+        let perdaTotal = valorGasto * percPerda / 100
+
+        ExibirResultado1.innerHTML = `É estimado que sua empresa perca <span style = color:red> <b> R$ ${perdaTotal.toFixed(2)} </b> </span>`
+
+    }
+
+    function CalcularGanho(){
+        let valorGasto = Number(Inp_valorGasto.value)
+        let percPerda = Number(inp_percPerda.value)
+
+        let perdaTotal = valorGasto * percPerda / 100
+        let ganhoTotal = perdaTotal * 0.9
+
+        ExibirResultado2.innerHTML = `É estimado que sua empresa recupere <span style = color:green> <b> R$${ganhoTotal.toFixed(2)} </b> </span> com o uso do nosso produto`
+
+
+    }
+
+
+
+
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   Senha:
+   <input type="password" id="input_senha" oninput="validar()">
+   <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+   function validar() {
+      let senha = input_senha.value;
+
+      let tamanho = senha.length;
+
+      let forca = 0;
+
+      if (tamanho >= 8) {
+         forca++;
+      } 
+      
+      // "Teste" != 'teste'   - significa que mudou o "T" para "t", indicando que havia caractere MAIÚSCULO
+      if (senha != senha.toLowerCase()) {
+         forca++; // representa que tem AO MENOS um caractere MAIÚSCULO
+      }
+
+      // "Teste" != 'TESTE'   - significa que mudou o "este" para "ESTE", indicando que havia caracteres minúsculos
+      if (senha != senha.toUpperCase()) {
+         forca++; // representa que tem AO MENOS um caractere minúsculo
+      }
+
+      if (forca == 0) {
+         div_mensagem.innerHTML = 'Senha Insegura';
+      } else if (forca == 1) {
+         div_mensagem.innerHTML = 'Senha Fraca';
+      } else if (forca == 2) {
+         div_mensagem.innerHTML = 'Senha Média';
+      } else {
+         div_mensagem.innerHTML = 'Senha Forte';
+      }
+   }
+</script>

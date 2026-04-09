@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 15. É tri/penta! </title>
+</head>
+
+<body>
+    <h3>15. É tri/penta!</h3>
+
+    Digite o primeiro número:
+    <input type="text" id="inpNumero1"><br><br>
+
+    Digite o segundo:
+    <input type="text" id="inpNumero2"><br><br>
+
+    <button onclick="curtir()"> Curto 3 e 5! </button>
+    <div id="exibirResultado"></div>
+
+</body>
+
+</html>
+
+<script>
+    function curtir() { 
+        let numero1 = Number(inpNumero1.value);
+        let numero2 = Number(inpNumero2.value);
+        let mensagem = '';
+
+
+        for (; numero1 <= numero2; numero1++) {
+
+            if (numero1 % 3 == 0 && numero1 % 5 == 0) {
+                mensagem += `${numero1} É TRI! É PENTA! <br>`
+
+            } else if (numero1 % 3 == 0) {
+                mensagem += `${numero1} É TRI! <br>`
+            } else if (numero1 % 5 == 0) {
+                mensagem += `${numero1} É PENTA! <br>`
+            } else {
+                mensagem += `${numero1} <br>`
+            }
+
+            
+        }
+        exibirResultado.innerHTML = mensagem;
+    }  
+</script>

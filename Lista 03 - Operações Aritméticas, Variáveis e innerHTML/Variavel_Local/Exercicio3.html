@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazendo divisão</title>
+</head>
+<body>
+
+    <h1>Fazendo divisão</h1>
+
+    N. 1 <input type="number" id="n1"><br><br>
+    N. 2 <input type="number" id="n2"> <br><br>
+
+    <button onclick="Quociente()">Quociente</button>
+    <button onclick="Resto()">Resto</button>
+    <button onclick="Completo()">Completo</button>
+     
+</body>
+</html>
+
+<script>
+
+    function Quociente(){
+
+        alert(`A divisão de N1 por N2 é ${ n1.value / n2.value}`)
+
+    }
+    function Resto(){
+
+        alert(`O resto da divisão de N1 por N2 é ${ n1.value % n2.value}`)
+    }
+    function Completo(){
+
+        alert(`A divisão de N1 por N2 é: ${ n1.value / n2.value} e o resto dessa divisão é: ${ n1.value % n2.value}`)
+    }
+
+
+
+</script>

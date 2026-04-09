@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 11. Tabuada Colorida </title>
+</head>
+<body>
+
+    <h3> 11. Tabuada Colorida </h3>
+    
+    Selecione um número da tabuada:
+    <select id="select_tabuada">
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+    </select><br><br>
+
+    Digite até que número deve ir:
+    <input type="text" id="inpNumero"><br><br>
+
+    <button onclick="par()"> Ver Tabuada </button>
+    <div id="exibirResultado"></div>
+
+</body>
+</html>
+
+<script>
+    let contador = 0;   
+
+    function par() { 
+        let numero = Number(inpNumero.value);
+        let tabuada = Number(select_tabuada.value);
+
+        while (contador < numero) {
+            contador += 1;
+            if (contador % 2 == 0) {
+                exibirResultado.innerHTML += `<span style='color: blue;'>${tabuada} x ${contador} = ${tabuada * contador}<br></span>`
+            } else {
+                exibirResultado.innerHTML += `<span style='color: red;'>${tabuada} x ${contador} = ${tabuada * contador}<br></span>`
+            }
+        } 
+    }  
+</script>

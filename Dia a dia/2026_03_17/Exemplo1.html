@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="ipt_frase" oninput="Analisar()">
+    <div id="div_mensagem"></div>
+
+    
+</body>
+</html>
+
+<script>
+
+    function Analisar(){
+        let frase_original = ipt_frase.value;
+        let mensagem = "";
+        let tamanho = frase_original.length;
+
+        let primeira_letra = frase_original[0]
+        let ultima_letra = frase_original[tamanho - 1]
+
+        mensagem += "<br> tamanho da frase " + tamanho 
+
+        let frase_maiuscula = frase_original.toUpperCase();
+        let frase_minuscula = frase_original.toLowerCase();
+
+        mensagem += "<br> Frase MINUSCULA" + frase_minuscula 
+        mensagem += "<br> Frase MAIUSCULA" + frase_maiuscula
+
+        mensagem += `<br> primeira letra ${primeira_letra}`
+        mensagem += `<br> ultima letra ${ultima_letra}`
+
+
+        let posicao_com = frase_original.indexOf(".com");
+        let tem_com = frase_original.includes(".com")
+        let termina_com = frase_original.endsWith(".com")
+
+
+        mensagem += `<br> posicao com ${posicao_com}
+                    <br> tem com ${tem_com}
+                    <br> termina com ${termina_com}`
+
+        let trocar_a_b = frase_original.replace("a", "b")
+        let trocar_a_b_todos = frase_original
+            
+        .replaceAll("A", "B")
+        let tirar_espaco = frase_original.replaceAll(" ", "")
+
+        
+        mensagem += `<br> trocar A por B ${trocar_a_b}`
+        mensagem += `<br> trocar A por B todos ${trocar_a_b_todos}`
+        mensagem += `<br> tirar espaaco ${tirar_espaco}`
+
+        let recortar = frase_original.substring(posicao_com,(posicao_com + 4 ))
+        mensagem += `<br> cortado ${recortar}`
+
+
+
+
+        div_mensagem.innerHTML =    mensagem
+    }
+
+
+
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="inpFruta">
+    <button onclick="Adicionar()">Adicionar</button>
+    <button onclick="Analisar()">Exibir</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    let lista = ['Morango', 'Maçã', 'Abacate']
+
+    function Adicionar(){
+        let fruta = inpFruta.value
+        lista.push(fruta)
+    }
+
+    function Analisar(){
+        exibirResultado.innerHTML = ``
+
+        for (let i = 0; i < lista.length; i++){
+            exibirResultado.innerHTML += `<br> ${i + 1} - ${lista[i]}`
+        }
+    }
+
+
+</script>
