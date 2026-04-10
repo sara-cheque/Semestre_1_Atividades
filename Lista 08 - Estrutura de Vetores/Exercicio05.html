@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. Registro de Linhas de Ônibus com Pesquisa de Histórico</title>
+</head>
+
+<body>
+
+    <h3>5. Registro de Linhas de Ônibus com Pesquisa de Histórico</h3>
+
+    Digite a linha que você pegou: <br><br>
+    <input type="text" id="inpLinha"> <br><br>
+
+    <button onclick="Gravar()">Gravar busão</button>
+    <button onclick="Pesquisar()">Pesquisar</button> <br><br>
+
+    <div id="exibirResultado"></div> <br><br>
+    <div id="exibirResultado1"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    let listaLinhas = []
+
+    function Gravar() {
+
+        let linha = inpLinha.value
+        listaLinhas.push(linha)
+        let tamLista = listaLinhas.length
+
+        exibirResultado.innerHTML = ''
+
+        for (let i = tamLista - 1; i >= 0; i--) {
+            exibirResultado.innerHTML += `<br> ${listaLinhas[i]}`
+        }
+
+    }
+
+    function Pesquisar() {
+        let linha = inpLinha.value
+        let posicao = []
+        
+        for (let i = 0; i < listaLinhas.length; i++) {
+
+            if (listaLinhas[i] == linha) {
+                // exibirResultado.innerHTML += `<br> contem na posicao ${i} `
+                posicao.push(i)
+                if (i == listaLinhas.length - 1) {
+                    exibirResultado1.innerHTML = `<br>  Você já pegou essa linha 4 vezes, nessa ordem `
+                    for (let j = 0; j < posicao.length; j++){
+                        exibirResultado1.innerHTML += `${posicao[j]},   `
+                    }
+                }
+
+                console.log(posicao)
+            } else {
+                exibirResultado1.innerHTML = `<br> não contem`
+            }
+
+
+        }
+
+
+    }
+
+
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Projetos e Classificação de Experiência Profissional</title>
+</head>
+<body>
+
+    <h3>4. Cadastro de Projetos e Classificação de Experiência Profissional</h3>
+
+    Projetos que você ja fez <br><br>
+    <input type="text" id="inpProjeto"> <br><br>
+
+    <button onclick="Registrar()">Registrar projeto</button> 
+    <button onclick="Mostrar()">Mostrar projetos</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    listaProjetos = [];
+
+    function Registrar(){
+        let projeto = inpProjeto.value
+        listaProjetos.push(projeto)
+        tamanhoLista = listaProjetos.length
+        let experiencia = ''
+
+        if (tamanhoLista >= 13){
+            experiencia = 'Sênior'
+        } else if (tamanhoLista >= 5){
+            experiencia = 'Pleno'
+        } else {
+            experiencia = 'Júnior'
+        }
+
+
+        exibirResultado.innerHTML = ` ${tamanhoLista} é a quantidade de projetos e ${experiencia} é seu nível de experiência`
+    }
+
+    function Mostrar(){
+
+        let tamanoLista = listaProjetos.length
+        exibirResultado.innerHTML = ''
+        for (i = tamanoLista - 1; i >= 0; i--){
+            exibirResultado.innerHTML += `<br> ${listaProjetos[i]}`
+            
+        }
+    }
+
+</script>

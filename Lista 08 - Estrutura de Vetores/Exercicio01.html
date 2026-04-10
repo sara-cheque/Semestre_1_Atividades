@@ -11,7 +11,7 @@
 
     <input type="text" id="inpFilme"><br><br>
 
-    <button onclick="Cadastrar">Cadastrar</button>
+    <button onclick="Cadastrar()">Cadastrar</button>
 
     <div id="exibirResultado"></div>
     
@@ -19,9 +19,16 @@
 </html>
 
 <script>
-
+    
+    let listaFilme = [];
+    
     function Cadastrar(){
-        
+        let filme = inpFilme.value
+
+        listaFilme.push(filme)
+
+        exibirResultado.innerHTML += `<br> ${listaFilme[listaFilme.length -1 ]}`
+
     }
 
 

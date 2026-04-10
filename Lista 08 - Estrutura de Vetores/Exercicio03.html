@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos com Exibição Invertida</title>
+</head>
+<body>
+
+    <h3>3. Cadastro de Alunos com Exibição Invertida</h3>
+
+    Nome do aluno:
+    <input type="text" id="inpAluno"> <br><br>
+
+    <button onclick="Cadastrar()">Cadastrar</button> <br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    let listaAluno = []
+    let contador = 0
+
+    function Cadastrar(){
+        let aluno = inpAluno.value
+
+        listaAluno.push(aluno)
+        tamanhoLista = listaAluno.length
+
+        // contador = tamanhoLista
+        
+        // exibirResultado.innerHTML += listaAluno[contador - 1]
+        exibirResultado.innerHTML = ''
+
+        for (let i = tamanhoLista - 1; i >= 0; i--){
+             exibirResultado.innerHTML += `<br> ${listaAluno[i]}`
+             console.log(listaAluno[i])
+        }
+
+
+
+
+    }
+
+</script>

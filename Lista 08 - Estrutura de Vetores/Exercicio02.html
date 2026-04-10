@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes em Cores: Azul e Vermelho Alternados</title>
+</head>
+<body>
+
+    <h3>2. Filmes em Cores: Azul e Vermelho Alternados</h3>
+
+    <input type="text" id="inpFilme"> <br><br>
+
+    <button onclick="Cadastrar()">Cadastrar</button> <br><br>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    let listaFilme = [];
+    let contador = 0;
+
+    function Cadastrar(){
+
+        let filme = inpFilme.value;
+        contador++;
+        listaFilme.push(filme);
+        let cor = "blue"
+
+        if (contador % 2 == 0){
+            cor = "blue"
+        } else {
+            cor = "red"
+        }
+
+        exibirResultado.innerHTML += `<br> <span style = 'color:${cor}'> ${contador} - ${listaFilme[listaFilme.length - 1]} </span>`
+
+
+    }
+
+
+</script>
+
