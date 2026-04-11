@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio: Invasão de Impel Down</title>
 </head>
+
 <body>
 
     <h3>Desafio: Invasão de Impel Down</h3>
@@ -21,45 +23,57 @@
     <button onclick="batalha()">Nova batalha</button> <br><br>
 
     <div id="exibirResultado"></div>
-        
+
 </body>
+
 </html>
 
 <script>
 
-    let energia = 100 
-    let marinheiros = 0
-    
-    function batalha(){
+
+    function batalha() {
+
+        let energia = 100
+        let marinheiros = 0
 
         let qtdBatalha = Number(inpBatalha.value)
         let qtdMarinheiro = Number(inpMarinheiro.value)
         let qtdcarnes = Number(inpCarnes.value)
 
-        for (let i = 0; i < qtdBatalha; i++){
 
-            if (qtdcarnes > 0 && energia >= 10){
-                
+        for (let i = 0; i < qtdBatalha; i++) {
+
+            if (qtdcarnes > 0 || energia > 10) {
+
                 energia -= 10
 
-                if (energia < 10){
+                if (energia <= 10 && qtdcarnes > 0) {
                     qtdcarnes -= 1
                     energia += 100
                 }
-    
-                if(energia => 5){
-                    for (let j = 0; j < qtdMarinheiro; j++){
+
+                if (energia >= 5) {
+                    for (let j = 0; j < qtdMarinheiro; j++) {
                         energia -= 5
                         marinheiros++ // pra contar no final dps     
-                    }  
-   
-                } 
-    
-    
-            } else {
-                // Luffy nao tem mais energia nem carne PERDE
+                    }
+
+                }
             }
         }
+
+        if (energia >= 0) {
+            exibirResultado.innerHTML = ``
+            exibirResultado.innerHTML += `<br>Resultado: Luffy saiu vitorioso!`
+
+        } else {
+            exibirResultado.innerHTML = ``
+            exibirResultado.innerHTML += `<br>Resultado: Luffy foi derrotado`
+        }
+
+        exibirResultado.innerHTML += `<br> Quantidade de carnes: ${qtdcarnes}`
+        exibirResultado.innerHTML += `<br> Quantidade de marinheiros derrotados: ${marinheiros}`
+        exibirResultado.innerHTML += `<br> Energia restante ao final das batalhas: ${energia}`
 
     }
 
