@@ -43,27 +43,29 @@
     }
 
     function Pesquisar() {
+
         let linha = inpLinha.value
         let posicao = []
+        let mensagem
         
         for (let i = 0; i < listaLinhas.length; i++) {
 
             if (listaLinhas[i] == linha) {
+
                 // exibirResultado.innerHTML += `<br> contem na posicao ${i} `
                 posicao.push(i)
-                if (i == listaLinhas.length - 1) {
-                    exibirResultado1.innerHTML = `<br>  Você já pegou essa linha 4 vezes, nessa ordem `
-                    for (let j = 0; j < posicao.length; j++){
-                        exibirResultado1.innerHTML += `${posicao[j]},   `
-                    }
-                }
-
                 console.log(posicao)
-            } else {
-                exibirResultado1.innerHTML = `<br> não contem`
+   
+            }       
+        }
+        
+        if (posicao.length > 0){
+            exibirResultado1.innerHTML = `<br>  Você já pegou essa linha ${posicao.length} vezes, nessa ordem  `
+            for(let j = 0; j < posicao.length; j++){
+                exibirResultado1.innerHTML += `${posicao[j]}, `
             }
-
-
+        }  else {
+            exibirResultado1.innerHTML = `<br> não contem`
         }
 
 
