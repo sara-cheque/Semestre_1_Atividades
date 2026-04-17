@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="contar()">contar</button> <br> <br>
+    <button onclick="verificar()">verificar</button> <br> <br>
+    <button onclick="contarInterrupcao()">contarInterrupcao</button> <br> <br>
+    
+    <div id="exibirResultado"></div>
+
+</body>
+</html>
+<script>
+
+    function contar(){
+        for (let i = 1; i < 10; i++){
+            exibirResultado.innerHTML += i
+        }
+    }
+    
+    function verificar(){
+        let resposta = prompt('digite algo:')
+        
+        while(resposta == '' || resposta == null){
+            resposta = prompt('Invalido:')
+            
+        }
+        exibirResultado.innerHTML += resposta
+        
+    }
+    
+    function contarInterrupcao(){
+        let mensagem = ''
+        let contador = 0
+        
+        while(true){
+            contador++
+            mensagem += `<br> contador: ${contador}`
+            
+            if(contador >= 10){
+                break
+            }
+        }
+        exibirResultado.innerHTML += mensagem
+    }
+</script>

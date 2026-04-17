@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio One Piece - CRUD do Sanji</title>
+</head>
+<body>
+
+    <h3>Desafio One Piece - CRUD do Sanji</h3>
+
+    <input type="text" id="inpComida"> <br><br>
+    <button onclick="Cadastrar()">Cadastrar Estoque de Comidas</button> <br><br>
+
+    <button onclick="VerificarQtd()">Verificar Quantidade"</button>
+    <div id="exibirResultado"></div> <br><br>
+    
+    Pesquisar comida
+    <input type="text" id="inpPesquisa">
+    <button onclick="Pesquisar()">Pesquisar</button>
+    <div id="exibirPesquisa"></div> <br><br>
+    
+    <button onclick="Exibir()">Exibir estoque</button>
+    <div id="exibirEstoque"></div> <br><br>
+
+    
+</body>
+</html>
+
+<script>
+    
+    let listaComida = []
+    
+    function Cadastrar(){
+        let comida = inpComida.value
+        listaComida.push(comida)
+        
+        console.log(listaComida)
+    }
+    
+    function VerificarQtd(){
+        let tamanhoLista = listaComida.length
+
+        if (tamanhoLista < 3){
+            exibirResultado.innerHTML = `Desse jeito, o Luffy devora até o navio"`
+        } else if (tamanhoLista < 7){
+            exibirResultado.innerHTML = `O comilão do Luffy não vai deixar sobrar nenhuma comida`
+        } else if (tamanhoLista < 10){
+            exibirResultado.innerHTML = `Assim, talvez sobre um pouco para a tripulação"`
+        } else {
+            exibirResultado.innerHTML = `Desse jeito vai ter comida para todo mundo e ainda consigo guardar um pouco para a senhorita Nami!"`
+        }
+    }
+
+    function Pesquisar(){
+        let tamanhoLista = listaComida.length
+        let pesquisa = inpPesquisa.value
+        let unidade = 0
+
+        for (let i = 0; i < tamanhoLista; i++){
+            if (listaComida[i] == pesquisa){
+                unidade++
+            }
+        }
+
+        if (unidade >= 1){
+            exibirPesquisa.innerHTML = `Temos a comida ${pesquisa} e há ${unidade} unidade(s) dela`
+        } else {
+            exibirPesquisa.innerHTML = `Alguém vai ter que comprar ${pesquisa} , tá fazendo falta..."`
+
+        }
+    }
+
+    function Exibir(){
+        exibirEstoque.innerHTML =``
+        let tamanhoLista = listaComida.length
+
+
+        for (let i = 0; i < tamanhoLista; i++){
+            exibirEstoque.innerHTML += `<br> ${i} - ${listaComida[i]}`
+        }
+    }
+
+
+</script>
