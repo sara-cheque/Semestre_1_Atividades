@@ -1,85 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio One Piece - CRUD do Sanji</title>
 </head>
+
 <body>
 
     <h3>Desafio One Piece - CRUD do Sanji</h3>
 
-    <input type="text" id="inpComida"> <br><br>
-    <button onclick="Cadastrar()">Cadastrar Estoque de Comidas</button> <br><br>
+    Cadastrar Estoque de Comidas
+    <input type="text" id="inpComida" placeholder="Cadastrar comida"> 
+    <button onclick="Cadastrar()">Cadastrar</button> <br><br>
 
-    <button onclick="VerificarQtd()">Verificar Quantidade"</button>
-    <div id="exibirResultado"></div> <br><br>
     
     Pesquisar comida
     <input type="text" id="inpPesquisa">
-    <button onclick="Pesquisar()">Pesquisar</button>
-    <div id="exibirPesquisa"></div> <br><br>
+    <button onclick="Pesquisar()">Pesquisar</button>  <br><br>
+    <div id="exibirPesquisa"></div> <br>
     
-    <button onclick="Exibir()">Exibir estoque</button>
+    Alterar comida
+    <input type="text" id="inpNomeAtual" placeholder="Nome atual">
+    <input type="text" id="inpNovoNome" placeholder="Novo nome">
+    <button onclick="Alterar()">Alterar nome</button> <br><br>
+    <div id="exibirNovoNome"></div> <br><br>
+
+    Deletar comida
+    <input type="text" id="inpDelComida">
+    <button onclick="Deletar()">Remover comida</button>
+    <div id="exibirComidaDeletada"></div><br><br>
+
+    <button onclick="VerificarQtd()">Verificar Quantidade"</button>
+    <button onclick="Exibir()">Exibir estoque</button>  <br><br>
+
+    <div id="exibirResultado"></div> <br><br>
     <div id="exibirEstoque"></div> <br><br>
 
-    
+
 </body>
 </html>
 
 <script>
-    
+
     let listaComida = []
-    
-    function Cadastrar(){
+
+    function Cadastrar() {
         let comida = inpComida.value
         listaComida.push(comida)
-        
         console.log(listaComida)
     }
-    
-    function VerificarQtd(){
+
+    function VerificarQtd() {
         let tamanhoLista = listaComida.length
 
-        if (tamanhoLista < 3){
+        if (tamanhoLista < 3) {
             exibirResultado.innerHTML = `Desse jeito, o Luffy devora até o navio"`
-        } else if (tamanhoLista < 7){
+        } else if (tamanhoLista < 7) {
             exibirResultado.innerHTML = `O comilão do Luffy não vai deixar sobrar nenhuma comida`
-        } else if (tamanhoLista < 10){
+        } else if (tamanhoLista < 10) {
             exibirResultado.innerHTML = `Assim, talvez sobre um pouco para a tripulação"`
         } else {
             exibirResultado.innerHTML = `Desse jeito vai ter comida para todo mundo e ainda consigo guardar um pouco para a senhorita Nami!"`
         }
     }
 
-    function Pesquisar(){
+    function Pesquisar() {
         let tamanhoLista = listaComida.length
         let pesquisa = inpPesquisa.value
         let unidade = 0
 
-        for (let i = 0; i < tamanhoLista; i++){
-            if (listaComida[i] == pesquisa){
+        for (let i = 0; i < tamanhoLista; i++) {
+            if (listaComida[i] == pesquisa) {
                 unidade++
             }
         }
 
-        if (unidade >= 1){
+        if (unidade >= 1) {
             exibirPesquisa.innerHTML = `Temos a comida ${pesquisa} e há ${unidade} unidade(s) dela`
         } else {
             exibirPesquisa.innerHTML = `Alguém vai ter que comprar ${pesquisa} , tá fazendo falta..."`
-
         }
     }
 
-    function Exibir(){
-        exibirEstoque.innerHTML =``
+    function Exibir() {
+        exibirEstoque.innerHTML = ``
         let tamanhoLista = listaComida.length
 
+        let listaA = []
+        let listaB = []
 
         for (let i = 0; i < tamanhoLista; i++){
-            exibirEstoque.innerHTML += `<br> ${i} - ${listaComida[i]}`
+            if (listaA.includes(listaComida[i])){
+                let pos = listaA.indexOf(listaComida[i])
+                listaB[pos] += 1
+            } else {
+                listaA.push(listaComida[i])
+                listaB.push(1)
+            }
+        }
+
+        for (let i = 0; i < listaA.length; i++){
+            if (listaB[i] == 1){
+                exibirEstoque.innerHTML += `<br> ${i + 1} - ${listaA[i]} (${listaB[i]} unidade)` 
+            }else {
+                exibirEstoque.innerHTML += `<br> ${i + 1} - ${listaA[i]} (${listaB[i]} unidades)` 
+            }
+        }
+
+    }
+
+    function Alterar() {
+        let nomeNovo = inpNovoNome.value
+        let nomeAtual = inpNomeAtual.value
+        let tamanhoLista = listaComida.length
+
+        if (listaComida.includes(nomeAtual)){
+
+            for (let i = 0; i < tamanhoLista; i++){
+                if (listaComida[i] == nomeAtual){
+                    listaComida[i] = nomeNovo
+                }
+            }
+            exibirNovoNome.innerHTML = `A comida ${nomeAtual} foi alterada para ${nomeNovo}` 
+            
+        } else {
+            exibirNovoNome.innerHTML = `A comida ${nomeAtual} não foi encontrada no estoque.`
         }
     }
 
+    function Deletar(){
+        let comidaDeletada = inpDelComida.value
+         let tamanhoLista = listaComida.length
+        let listaA = []
+
+        if (listaComida.includes(comidaDeletada)){
+
+            for (let i = 0; i < tamanhoLista; i++){
+                if (listaComida[i] != comidaDeletada){
+                    listaA.push(listaComida[i])
+                }
+            }
+
+            listaComida = listaA
+            exibirComidaDeletada.innerHTML = `A comida ${comidaDeletada} foi removida do estoque.`
+
+        } else {
+            exibirComidaDeletada.innerHTML = `A comida ${comidaDeletada} não está no estoque.`
+        }
+
+    }
+
+    
+// pra deletar usar uma variavel de suporte igual no trem de juntar tudo
 
 </script>
