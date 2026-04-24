@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>Jogar dado</h3>
+
+    <button onclick="Jogar()">Jogar dado</button> <br><br>
+    <div 
+    style="
+    background-color: black; 
+    color:  aliceblue; 
+    width: 100px; 
+    font-size: 70px; 
+    align-content: center;
+    text-align: center;"
+    id="exibirResultado"></div>
+
+</body>
+
+</html>
+
+<script>
+    function Jogar() {
+        let aleatorio = Math.random()
+        let max = 20
+        let min = 1
+        let intervalo = max - min
+        let resultado = aleatorio * intervalo + min
+        let valor = resultado.toFixed()
+
+        exibirResultado.innerHTML = valor
+    }
+</script>

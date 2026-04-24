@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Execicio 04</h3>
+
+    <button onclick="sortear()">Sortear nota para aluno</button> <br><br>
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+    function sortear(){
+        let aleatorio = Math.random()
+        let max = 10
+        let min = 0
+        let intervalo = max - min
+        let resultado = aleatorio * intervalo + min
+        let valor = resultado.toFixed(1)
+
+        exibirResultado.innerHTML = valor
+    }
+</script>
+

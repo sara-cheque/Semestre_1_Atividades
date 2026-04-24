@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Sortear</h3>
+
+    <button onclick="sortear()">Aleatorio</button>
+    <button onclick="sortear5()">Sortear até 5</button>
+    <button onclick="sortear6()">Sortear até 6</button>
+    
+    <hr>
+    <input type="text" id="inpMax" placeholder="Maximo">
+    <input type="text" id="inpMin" placeholder="Minimo">
+    <button onclick="sortearMinAteMax()">Minimo e Maximo</button>
+    <hr>
+
+    <div id="exibirResultado"></div> <br><br>
+    
+</body>
+</html>
+
+<script>
+
+    function sortear(){
+        let aleatorio = Math.random()
+        exibirResultado.innerHTML = aleatorio
+        
+    }
+
+    function sortear5(){
+        let aleatorio = Math.random()
+        let ate5 = aleatorio * 5
+        exibirResultado.innerHTML = `sorteado ${aleatorio} | formatado ${ate5}`
+        // exibirResultado.innerHTML = `sorteado ${aleatorio} | formatado ${ate5.toFixed()}`
+    }
+
+    function sortear6(){
+        let aleatorio = Math.random()
+        let max = 6
+        let min = 1
+        let intervalo = max - min
+        let ate6 = aleatorio * intervalo + min
+
+        exibirResultado.innerHTML = `sorteado ${aleatorio} | formatado ${ate6.toFixed()}`
+        // exibirResultado.innerHTML = `sorteado ${aleatorio} | formatado ${ate5.toFixed()}`
+    }
+
+    function sortearMinAteMax(){
+        let aleatorio = Math.random()
+        let max = Number(inpMax.value)
+        let min = Number(inpMin.value)
+        let intervalo = max - min
+        let aleatorioFomado = aleatorio * intervalo + min
+        
+        exibirResultado.innerHTML = `sorteado ${aleatorio} | formatado ${aleatorioFomado.toFixed()}`
+        // exibirResultado.innerHTML = `sorteado ${aleatorio} | formatado ${ate5.toFixed()}`
+    }
+</script>
