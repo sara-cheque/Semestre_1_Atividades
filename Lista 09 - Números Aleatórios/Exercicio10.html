@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Exercicio 10</h3>
+
+    <button onclick="D6play1()">Dado jogador 1</button>
+    <button onclick="D6play2()">Dado jogador 2</button>
+    <button onclick="Comparar()">Comparar Resultados</button> <br><br>
+
+    Dado jogador 1 <br><br>
+    <div 
+        style="
+            background-color: black; 
+            color: aliceblue;
+            font-size: 20px;
+            align-items: center;
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            align-content: center;
+        " 
+    id="exibirResultado1"></div> <br>
+
+    Dado jogador 2 <br><br>
+    <div 
+        style="
+            background-color: black; 
+            color: aliceblue;
+            font-size: 20px;
+            align-items: center;
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            align-content: center;
+        " 
+    id="exibirResultado2"></div> <br>
+
+    <div id="exibirResultado3"></div>
+    
+</body>
+</html>
+
+<script>
+
+    let resultadoPlay1 = 0
+    let resultadoPlay2 = 0
+
+    function D6play1(){
+        let min = 0
+        let max = 6
+        let intervalo = max - min
+        let aleatorio = Math.random()
+        resultadoPlay1 = (intervalo * aleatorio + min).toFixed()
+
+        exibirResultado1.innerHTML = resultadoPlay1 
+    }
+
+    function D6play2(){
+        let min = 0
+        let max = 6
+        let intervalo = max - min
+        let aleatorio = Math.random()
+        resultadoPlay2 = (intervalo * aleatorio + min).toFixed()
+
+        exibirResultado2.innerHTML = resultadoPlay2
+    }
+
+    function Comparar(){
+        if (resultadoPlay1 > resultadoPlay2){
+            exibirResultado3.innerHTML = `Jogador 1 venceu`
+        } else if (resultadoPlay1 < resultadoPlay2){
+            exibirResultado3.innerHTML = `Jogador 2 venceu`
+        } else {
+            exibirResultado3.innerHTML = `Empate`
+
+        }
+    }
+
+
+</script>
