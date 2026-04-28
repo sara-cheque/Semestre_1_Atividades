@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Exercicio 09</h3>
+
+    <hr>
+    <button onclick="GerarNota()">Gerar uma nota de aluno entre 0 e 10</button>
+    <button onclick="GerarFrequencia()">Gerar uma frequência de aluno entre 0 e 100</button>
+    <button onclick="Aprovacao()">Ver Aprovação</button>
+    <hr>
+    <div id="exibirResultado1"></div>
+    <div id="exibirResultado2"></div>
+    
+</body>
+</html>
+
+<script>
+    
+    let notaResultado = 0
+    let freqResultado = 0
+
+    function GerarNota(){
+
+        let notaMin = 0
+        let notaMax = 10
+        let notaIntervalo = notaMax - notaMin
+        let notaAleatoria = Math.random()
+        notaResultado = (notaAleatoria * notaIntervalo + notaMin).toFixed(1)
+
+        exibirResultado1.innerHTML =  `Nota do aluno: ${notaResultado}`
+
+    }
+
+    function GerarFrequencia(){
+
+        let freqMin = 0
+        let freqMax = 100
+        let freqIntervalo = freqMax - freqMin
+        let freqAleatoria = Math.random()
+        freqResultado = (freqAleatoria * freqIntervalo + freqMin).toFixed(1)
+
+        exibirResultado2.innerHTML = `Frequencia do aluno: ${freqResultado}`
+    }
+
+    function Aprovacao(){
+        
+        let situação = 'reprovado'
+        
+        if (notaResultado > 6 && freqResultado >= 75){
+            situação = 'aprovado'
+        }
+        
+        let mensagem = `Com a nota ${notaResultado} e a frequencia ${freqResultado}, o aluno esta ${situação}`
+        
+        alert(mensagem)
+    }
+
+</script>

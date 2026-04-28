@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Exercicio 06</h3>
+
+    <button onclick="Sortear()">Sortear momento do dia</button> <br><br>
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function Sortear(){
+        let min = 0
+        let max = 23
+        let intervalo = max - min
+        let aleatorio = Math.random()
+        let resultado = (intervalo * aleatorio + min).toFixed()
+
+        if (resultado <= 11){
+            exibirResultado.innerHTML = `Bom dia, flor do dia, são ${resultado}h`
+        } else if (resultado <= 17) {
+            exibirResultado.innerHTML = `Boa tarde, já vai tarde! São ${resultado}h`
+        } else {
+            exibirResultado.innerHTML = `Boa noite, durma bem! São ${resultado}h`
+        }
+    }
+</script>
