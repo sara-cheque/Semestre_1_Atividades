@@ -6,6 +6,39 @@
     <title>Document</title>
 </head>
 <body>
+
+    <h3>Exercicio 11</h3>
+
+    <button onclick="Avaliar()">Avaliar</button> <br><br>
+    <div style="font-size: 50px;" id="exibirResultado"></div>
     
 </body>
 </html>
+
+<script>
+
+    function Avaliar(){
+        let max = 5
+        let min = 0
+        let intervalo = max - min
+        let aleatorio = Math.random()
+        let resultado = (intervalo * aleatorio + min).toFixed(1)
+
+        if (resultado <= 0.5){
+            exibirResultado.innerHTML = '😭'
+        } else if (resultado <= 1.5){
+            exibirResultado.innerHTML = '😢'
+        } else if (resultado <= 3.5){
+            exibirResultado.innerHTML = '😑'
+        } else if (resultado <= 4.5){
+            exibirResultado.innerHTML = '😊'
+        } else {
+            exibirResultado.innerHTML = '😁'
+        }
+
+        
+
+
+
+    }
+</script>

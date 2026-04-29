@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Exercicio 12</h3>
+
+    <button onclick="Avaliar()">Avaliar</button> <br><br>
+    <button onclick="Media()">Verificar média</button> <br><br>
+    <div style="font-size: 50px;" id="exibirResultado"></div>
+    <div id="exibirResultado2"></div>
+    <div style="font-size: 50px;" id="exibirResultado1"></div>
+    
+</body>
+</html>
+
+<script>
+
+    let listaNotas = []
+
+    function Avaliar(){
+        let max = 5
+        let min = 0
+        let intervalo = max - min
+        let aleatorio = Math.random()
+        let resultado = (intervalo * aleatorio + min).toFixed(1)
+
+        listaNotas.push(resultado)
+
+        if (resultado <= 0.5){
+            exibirResultado.innerHTML = '😭'
+        } else if (resultado <= 1.5){
+            exibirResultado.innerHTML = '😢'
+        } else if (resultado <= 3.5){
+            exibirResultado.innerHTML = '😑'
+        } else if (resultado <= 4.5){
+            exibirResultado.innerHTML = '😊'
+        } else {
+            exibirResultado.innerHTML = '😁'
+        }
+
+        
+    }
+    
+    function Media(){
+
+        exibirResultado.innerHTML = ''
+
+        let soma = 0
+        let i = 0
+        for (i; i < listaNotas.length; i++){
+            soma += Number(listaNotas[i])
+        }
+
+        let resultadoMedia = soma / i
+
+        exibirResultado2.innerHTML = `Media geral: ${resultadoMedia.toFixed(1)}`
+        
+        if (resultadoMedia <= 0.5){
+            exibirResultado1.innerHTML = '😭'
+        } else if (resultadoMedia <= 1.5){
+            exibirResultado1.innerHTML = '😢'
+        } else if (resultadoMedia <= 3.5){
+            exibirResultado1.innerHTML = '😑'
+        } else if (resultadoMedia <= 4.5){
+            exibirResultado1.innerHTML = '😊'
+        } else {
+            exibirResultado1.innerHTML = '😁'
+        }
+
+       // exibirResultado1.innerHTML = `soma: ${soma}, <br> media: ${resultadoMedia},<br> I: ${i}`
+
+
+    }
+</script>

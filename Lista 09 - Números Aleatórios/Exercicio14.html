@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Exercicio 14</h3>
+
+    <button onclick="Lua()">Ver a Lua</button> <br><br>
+    <div style="font-size: 60px;" id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+    function Lua(){
+        let max = 31
+        let min = 1
+        let intervalo = max - min
+        let aleatorio = Math.random()
+        let resultado = (intervalo * aleatorio + min).toFixed()
+
+        console.log(resultado)
+
+        if (resultado <= 7){
+            exibirResultado.innerHTML = '🌑'
+        } else if (resultado <= 18) {
+            exibirResultado.innerHTML = '🌕'
+        } else if (resultado <= 22) {
+            exibirResultado.innerHTML = '🌒'
+        } else {
+            exibirResultado.innerHTML = '🌘'
+        }
+    }
+</script>

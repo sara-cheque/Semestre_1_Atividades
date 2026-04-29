@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Exercicio 15</h3>
+    
+    <div id="exibirResultado">Números pares: 0 <br> Números impares: 0</div> <br>
+    <button onclick="Sortear()">Sortear números</button> <br><br>
+    <div id="exibirResultado1"></div>
+    
+</body>
+</html>
+
+<script>
+
+    let pares = 0
+    let impar = 0
+
+    function Sortear(){
+        let min = -30
+        let max = -9
+        let intervalo = max - min
+        let aleatorio = Math.random()
+        let resultado = (aleatorio * intervalo + min).toFixed()
+
+        console.log(resultado)
+
+        if (resultado % 2 == 0) {
+            pares++
+        } else {
+            impar ++
+        }
+
+        exibirResultado1.innerHTML = `Número sorteado: ${resultado}`
+        exibirResultado.innerHTML = `Números pares: ${pares} <br> Números impares: ${impar}`
+    }
+</script>

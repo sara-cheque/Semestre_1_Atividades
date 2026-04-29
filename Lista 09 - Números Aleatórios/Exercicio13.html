@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Exercicio 13</h3>
+
+    <button onclick="Temperatura()">Sortear temperatura</button> <br><br>
+
+    <div id="exibirResultado"></div>
+
+    
+</body>
+</html>
+
+<script>
+
+    function Temperatura(){
+        let min = -20
+        let max = 20
+        let intervalo = max - min
+        let aleatorio = Math.random()
+        let resultado = (intervalo * aleatorio + min).toFixed()
+
+        exibirResultado.innerHTML = ''
+        exibirResultado.innerHTML = `Temperatura sorteada: ${resultado}`
+        
+        if (resultado <= 1){
+            exibirResultado.innerHTML += `<br> Dá pra conservar qualquer alimento`
+        } else if (resultado <= 10){
+            exibirResultado.innerHTML += `<br> Conserva a maioria dos alimentos`
+        } else {
+            exibirResultado.innerHTML += `<br> Estraga a maioria dos alimentos`
+        }
+    }
+</script>
