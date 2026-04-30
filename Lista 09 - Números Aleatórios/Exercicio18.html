@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <h3>Exercicio 18</h3>
+    
+    <div id="exibirResultado">Jogador 1: 0  <br>Jogador 2: 0  <br>Empate: 0  </div> <br><br>
+    
+    <button onclick="Sortear()">Sortear</button> <br><br>
+    
+    jogador 1 <br> <br>
+    <div style="
+        background-color: black;
+        color: bisque;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        align-content: center;
+        font-size: 30px;
+    " id="divDado1">0</div> <br><br>
+
+    jogador 2 <br><br>
+    <div style="
+        background-color: black;
+        color: bisque;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        align-content: center;
+        font-size: 30px;
+    " id="divDado2">0</div> <br><br>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    let play1 = 0
+    let play2 = 0
+    let Empate = 0
+
+    function Sortear(){
+        let min = 1
+        let max = 6
+        let intervalo = max - min
+
+        let dadoAleatorio1 = Math.random()
+        let dadoAleatorio2 = Math.random()
+
+        let resultado1 = (intervalo * dadoAleatorio1 + min).toFixed()
+        let resultado2 = (intervalo * dadoAleatorio2 + min).toFixed()
+
+        divDado1.innerHTML = resultado1
+        divDado2.innerHTML = resultado2
+
+        if (resultado1 > resultado2){
+            play1++
+        } else if (resultado2 > resultado1){
+            play2++
+        } else {
+            Empate++
+        }
+
+        exibirResultado.innerHTML = `
+        Jogador 1: ${play1}  <br>
+        Jogador 2: ${play2}  <br>
+        Empate: ${Empate} <br> <br>`
+
+        if (play1 > play2){
+            exibirResultado.innerHTML += 'O jogador 1 está vencendo!'
+        } else if (play2 > play1){
+            exibirResultado.innerHTML += 'O jogador 2 está vencendo!'
+        } else {
+            exibirResultado.innerHTML += 'O jogo está empatado!'
+        }
+    }
+</script>

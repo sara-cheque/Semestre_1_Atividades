@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>Exercicio 17</h3>
+
+    Digite seu nome <br><br>
+    <input type="text" id="inpNome"> <br><br>
+
+    digite seus números da sorte (entre 1 a 100) <br><br>
+    <input style="width: 60px;" type="text" id="inpNumero1">
+    <input style="width: 60px;" type="text" id="inpNumero2">
+    <input style="width: 60px;" type="text" id="inpNumero3"> <br><br>
+
+    <button onclick="Sortear()">Sortear</button> <br><br>
+
+    <div id="exibirResultado"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    let qtdSorteios = 0
+
+    function Sortear() {
+        let nome = inpNome.value
+        let numero = []
+        let sorteado = false
+        let controle = false
+
+        numero[0] = Number(inpNumero1.value)
+        numero[1] = Number(inpNumero2.value)
+        numero[2] = Number(inpNumero3.value)
+       
+            if (numero[0] >= 1 && numero[0] <= 10){
+                if (numero[1] >= 1 && numero[1] <= 10){
+                    if (numero[2] >= 1 && numero[2] <= 10){
+                        controle = true
+                    }
+                }
+            }
+        
+        if (controle) {
+
+            qtdSorteios++
+
+            let min = 1
+            let max = 10
+            let intervalo = max - min
+            let aleatorio = Math.random()
+            let resultado = (aleatorio * intervalo + min).toFixed()
+
+            console.log(resultado)
+
+            for (let j = 0; j < numero.length; j++) {
+                if (resultado == numero[j]) {
+                    sorteado = true
+                }
+            }
+
+            if (sorteado) {
+                exibirResultado.innerHTML = `Parabéns, ${nome} você foi sorteado(a) após ${qtdSorteios} sorteios!`
+            } else {
+                exibirResultado.innerHTML = ``
+            }
+
+        } else {
+            alert('Digite um número entre 1 e 10')
+        }
+
+    }
+</script>

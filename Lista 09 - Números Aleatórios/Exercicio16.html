@@ -9,11 +9,47 @@
 
     <h3>Exercicio 16</h3>
 
-    Digite seu nome <br>
+    Digite seu nome <br><br>
     <input type="text" id="inpNome"> <br><br>
 
-    digite seu número da sorte (entre 1 a 10)
-    <input type="text" id="inpNumero">
+    digite seu número da sorte (entre 1 a 10) <br><br>
+    <input type="text" id="inpNumero"> <br><br>
+
+    <button onclick="Sortear()">Sortear</button> <br><br>
+
+    <div id="exibirResultado"></div>
     
 </body>
 </html>
+
+<script>
+
+    let qtdSorteios = 0
+
+    function Sortear(){
+        let nome = inpNome.value
+        let numero = Number(inpNumero.value)
+
+        if (numero >= 1 && numero <= 10){
+
+            qtdSorteios++
+
+            let min = 1
+            let max = 10
+            let intervalo = max - min
+            let aleatorio = Math.random()
+            let resultado = (aleatorio * intervalo + min).toFixed()
+
+            console.log(resultado)
+
+            if (resultado == numero){
+                exibirResultado.innerHTML = `Parabéns, ${nome} você foi sorteado(a) após ${qtdSorteios} sorteios!`
+            } else {
+                exibirResultado.innerHTML = ``
+            }
+
+        } else {
+            alert( 'Digite um número entre 1 e 10')
+        }
+    }
+</script>
