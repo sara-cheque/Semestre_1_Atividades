@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="somar(10)">somar 10</button>
+    <button onclick="somar(50)">somar 50</button>
+    <button onclick="somar(100)">somar 100</button>
+    <button onclick="somar(1000)">somar 1000</button>
+
+    <input type="text" id="inpNumero">
+    <!-- <button onclick="somar(Number(-(inpNumero.value)))">calcular</button> -->
+    <button onclick="subtracao()">calcular</button>
+
+    <dvi id="exibirResultado"></dvi>
+    
+</body>
+</html>
+
+<script>
+
+    let contador = 0
+
+    // function soma10(){
+    //     exibirResultado.innerHTML = contador += 10
+    // }
+    // function soma50(){
+    //     exibirResultado.innerHTML = contador += 50
+    // }
+    // function soma100(){
+    //     exibirResultado.innerHTML = contador += 100
+    // }
+
+    function somar(valor){
+        exibirResultado.innerHTML = contador += valor
+    }
+
+    function subtracao(){
+        let numero = Number(inpNumero.value)
+        exibirResultado.innerHTML = contador -= numero
+    }
+
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Crie uma função que receba um número e retorne true caso o número seja positivo 
+    e false caso contrário. -->
+
+    <input type="text" id="inpNumero">
+    <button onclick="TrueOrFalse(Number(inpNumero.value))">True or false</button>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function TrueOrFalse(valor){
+        a = true
+        if (valor < 0){
+            a = false
+        }
+
+        exibirResultado.innerHTML = a
+    }
+    
+</script>

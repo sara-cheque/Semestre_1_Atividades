@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Crie uma função que receba um texto e retorne true caso o texto contenha vogais 
+    (não vale usar includes!) -->
+
+    <input type="text" id="inpTexto">
+    <button onclick="vogal(inpTexto.value)">Tem vogal?</button>
+    <div id="exibirResultado"></div>
+
+
+</body>
+</html>
+
+<script>
+    function vogal(texto){
+        controle = false
+        vogais = ['A', 'E', 'I', 'O', 'U']
+        texto = texto.toUpperCase()
+        for (i = 0; i < vogais.length; i++){
+            if (texto.indexOf(vogais[i]) > 0){
+                controle = true
+            }
+        }
+
+        exibirResultado.innerHTML = controle
+    }
+</script>
