@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Crie uma função que receba um vetor de números e 
+    retorne a soma de todos os elementos do vetor. -->
+
+    <button onclick="somar([1,4,6,4,2,3,9,9,6,12])">Somar lista</button>
+    
+</body>
+</html>
+
+<script>
+
+    function somar(lista){
+        tamanholista = lista.length
+        let total = 0
+        for (let i = 0; i < tamanholista; i++){
+            total += lista[i]
+        }
+
+        return console.log(total)
+        
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Crie uma função que receba um texto e retorne todas 
+    as vogais do texto (como se removesse as consoantes).
+    -->
+
+    <button onclick="analisarTexto('teste um dois TRES')">Texto</button>
+    <div id="exibirResultado"></div>
+
+</body>
+</html>
+
+<script>
+    
+    function analisarTexto(texto){
+        tamanhoTexto = texto.length
+        vogais = ['a', 'e', 'i', 'o', 'u']
+        listaA = []
+        texto = texto.toLowerCase()
+
+        for (let i = 0; i < tamanhoTexto; i++){
+            for (let j = 0; j < vogais.length; j++){
+                if (texto[i] == vogais[j] ){
+                    listaA.push(texto[i])
+                }
+
+            }
+        }
+
+        return console.log(listaA)
+    }
+</script>
+

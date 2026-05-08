@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    nome 
+    <input type="text" id="inpNome"> <br><br>
+    email 
+    <input type="text" id="inpEmail"> <br><br>
+
+    <button onclick="exibir()">exibir</button>
+
+    <div id="exibirResultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+ 
+
+    function exibir(){
+        let email = "sara@gmail.com"
+        let nome = "Sara"
+
+        let usuario = {
+            nome: "Sara",
+            email: "sara@gmail.com"
+        }
+
+        usuario.anoNasc = 2004
+        console.log(usuario)
+        
+        usuario.nome = inpNome.value
+        usuario.email = inpEmail.value
+        console.log(usuario)
+
+
+        exibirResultado.innerHTML = `<br>Nome: ${usuario.nome} <br> Email: ${usuario.email} <br> idade: ${2026 - usuario.anoNasc}`
+
+    }
+</script>
