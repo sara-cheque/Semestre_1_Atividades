@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="jogar(1)">Jogar Sete e Meio</button> <br><br>
+    <div id="btnOculto"></div> <br><br>
+    <div id="resultadoCarta1"></div> <br>
+    <div id="resultadoCarta2"></div> <br>
+    <div id="resultadoCarta3"></div> <br>
+    <div id="resultadoCarta4"></div> <br>
+
+    
+</body>
+</html>
+
+<script>
+
+    let somaDosPontos = 0
+    let somaDosPontosBanca = 0
+
+
+    
+    function jogar(inner){
+        if (inner ==1 ){
+            resultadoCarta1.innerHTML = ''
+            resultadoCarta2.innerHTML = ''
+            resultadoCarta3.innerHTML = ''
+            resultadoCarta4.innerHTML = ''
+             somaDosPontos = 0
+             somaDosPontosBanca = 0
+
+        }
+
+        btnOculto.innerHTML = `<button onclick="jogar(2)">Pedir outra carta</button> <button onclick="jogar(3)">Passar a vez</button>`
+    
+        let nomes = ['Ás', 2, 3, 4, 5, 6, 7, 'Valete', 'Rainha', 'Rei']
+        let copas = [1, 2, 3, 4, 5, 6, 7, 0.5, 0.5, 0.5]
+        let espadas = [1, 2, 3, 4, 5, 6, 7, 0.5, 0.5, 0.5]
+        let ouros = [1, 2, 3, 4, 5, 6, 7, 0.5, 0.5, 0.5]
+        let paus = [1, 2, 3, 4, 5, 6, 7, 0.5, 0.5, 0.5]
+
+        let sorteioBaralho =  sortear(4, 1)
+        let sorteioCarta = sortear(9, 0)
+        let nomeBaralhoSorteado = ""
+        let valorCartaSorteada = 0
+
+
+        if (sorteioBaralho == 1){
+            valorCartaSorteada = copas[sorteioCarta]
+            nomeBaralhoSorteado = 'Copas'
+        } else if (sorteioBaralho == 2){
+            valorCartaSorteada = espadas[sorteioCarta]
+            nomeBaralhoSorteado = 'Espadas'
+        } else if (sorteioBaralho == 3){
+            valorCartaSorteada = ouros[sorteioCarta]
+            nomeBaralhoSorteado = 'Ouros'
+        } else if (sorteioBaralho == 4){
+            valorCartaSorteada = paus[sorteioCarta]
+            nomeBaralhoSorteado = 'Paus'
+        }
+
+        
+        if (inner == 1){
+            somaDosPontos += valorCartaSorteada
+            resultadoCarta1.innerHTML = `Jogador: ${somaDosPontos}  <br> (${valorCartaSorteada } pontos) - ${nomes[sorteioCarta]} de ${nomeBaralhoSorteado}`
+        } else if (inner == 2){
+            // if (somaDosPontos + valorCartaSorteada  < 7.5){
+                somaDosPontos += valorCartaSorteada
+                resultadoCarta1.innerHTML = `Jogador: ${somaDosPontos}  <br> Quero mais uma carta! <br> (${valorCartaSorteada } pontos) - ${nomes[sorteioCarta]} de ${nomeBaralhoSorteado}`
+            // } 
+
+        } else if (inner == 3) {
+            while ((somaDosPontosBanca <= somaDosPontos) && (somaDosPontosBanca < 7.5) ){
+                let sorteioCartaBanca = sortear(9, 0)
+                valorCartaSorteada = copas[sorteioCartaBanca]
+                somaDosPontosBanca += valorCartaSorteada
+            }
+            resultadoCarta3.innerHTML = `Banca: ${somaDosPontosBanca} <br> (${valorCartaSorteada } pontos) - ${nomes[sorteioCarta]} de ${nomeBaralhoSorteado}`
+            if (somaDosPontosBanca > somaDosPontos){
+                resultadoCarta4.innerHTML = `A banca venceu com ${somaDosPontosBanca } pontos!`
+            }
+        }
+
+        if (inner != 3){
+            if (somaDosPontos == 7.5){
+                resultadoCarta4.innerHTML = "SETE E MEIO! O jogador venceu com 7.5 pontos!" 
+            } else if (somaDosPontosBanca > 7.5){
+                resultadoCarta4.innerHTML = `A BANCA ESTOUROU! O jogador venceu com ${somaDosPontos } pontos!`
+            } else if( somaDosPontos > 7.5){
+                resultadoCarta4.innerHTML = `O JOGADOR ESTOUROU! A banca venceu com ${somaDosPontosBanca } pontos`
+            } else if (somaDosPontosBanca == 7.5){
+                resultadoCarta4.innerHTML = `"SETE E MEIO! A banca venceu com 7.5 pontos!"`
+            }
+
+        }
+
+
+        console.log(somaDosPontosBanca)
+        console.log(somaDosPontos)
+
+        // console.log(nomeBaralhoSorteado)
+    }
+
+    function final(){
+
+    }
+
+    function sortear (max, min){
+        let intervalo = max - min
+        let aleatorio = Math.random()
+        let resultado = (intervalo * aleatorio + min).toFixed()
+
+        return resultado
+    }
+
+</script>
