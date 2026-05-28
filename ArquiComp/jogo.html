@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show do Hardware</title>
+
+    <style>
+        /* Configurações Gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff5f0; /* Fundo levemente alaranjado */
+    color: #4a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#pagina {
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 25px; /* Bordas bem redondas */
+    box-shadow: 0 10px 30px rgba(255, 100, 0, 0.15); /* Sombra quente */
+    text-align: center;
+}
+
+/* Títulos e Textos */
+h1 {
+    color: #e65100; /* Laranja forte */
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #6d4c41;
+    margin-bottom: 30px;
+}
+
+/* Estrutura das Divs de Informação (Topo) */
+.topo {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff3e0;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.info {
+    font-weight: bold;
+    margin: 20px;
+}
+
+#numeroPergunta, #pontuacaotxt {
+    color: #d84315;
+    font-size: 1.2rem;
+  
+}
+
+/* Caixa da Pergunta */
+.caixaPergunta {
+    background-color: #fbe9e7;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    border: 2px solid #ffccbc;
+}
+
+/* Botões e Alternativas */
+.alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Espaçamento entre alternativas */
+}
+
+button {
+    background-color: #ff9800; /* Laranja vibrante */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px; /* Botões pílula */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #f57c00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 124, 0, 0.4);
+}
+        
+    </style>
+
+  
+</head>
+
+<body>
+
+    <div id="pagina">
+
+
+        <div id="telaInicial" class="tela ativa">
+
+            <h1>SHOW DO HARDWARE</h1>
+
+            <p>Teste seus conhecimentos sobre arquitetura de computadores.</p>
+
+            <button id="btn" onclick="showDoMilhao(null)">Começar Jogo</button>
+
+        </div>
+
+
+        <div id="tela"></div>
+
+           
+        <div id="telaFinal" class="tela"></div>
+    </div>
+
+
+</body>
+
+</html>
+<script>
+
+let perguntas = [
+
+    {
+        pergunta: "Conhecido como o cérebro do computador, ele faz todos os cálculos e comandos.",
+        alternativas: ["RAM", "CPU", "ROM", "ULA"],
+        correta: "CPU"
+    },
+
+    {
+        pergunta: "Parte da CPU que adora matemática e lógica.",
+        alternativas: ["ULA", "DMA", "RAM", "Flash"],
+        correta: "ULA"
+    },
+
+    {
+        pergunta: "São as anotações rápidas usadas pelo processador durante as tarefas.",
+        alternativas: ["Registradores", "ROM", "Data Bus", "EPROM"],
+        correta: "Registradores"
+    },
+
+    {
+        pergunta: "Memória que esquece tudo quando o computador desliga.",
+        alternativas: ["ROM", "Flash", "RAM", "DMA"],
+        correta: "RAM"
+    },
+
+    {
+        pergunta: "Memória que já vem com informações gravadas de fábrica.",
+        alternativas: ["RAM", "EPROM", "ROM", "Registradores"],
+        correta: "ROM"
+    },
+
+    {
+        pergunta: "Tipo de memória ROM que pode ser apagada usando luz ultravioleta.",
+        alternativas: ["RAM", "EPROM", "Flash", "CPU"],
+        correta: "EPROM"
+    },
+
+    {
+        pergunta: "Tecnologia usada em SSDs e pen drives para guardar arquivos rapidamente.",
+        alternativas: ["DMA", "Flash", "ROM", "ULA"],
+        correta: "Flash"
+    },
+
+    {
+        pergunta: "Lugar onde ficam guardados arquivos, jogos, fotos e documentos por muito tempo.",
+        alternativas: ["Memória de massa", "RAM", "Registradores", "CPU"],
+        correta: "Memória de massa"
+    },
+
+    {
+        pergunta: "Recurso que deixa dispositivos acessarem a memória sem incomodar o processador.",
+        alternativas: ["DMA", "ROM", "Address Bus", "I5"],
+        correta: "DMA"
+    },
+
+    {
+        pergunta: "Sinal que chama um chip específico para trabalhar.",
+        alternativas: ["Chip Select", "Data Bus", "RAM", "Quad Core"],
+        correta: "Chip Select"
+    },
+
+    {
+        pergunta: "Por onde passam os endereços das informações dentro do computador.",
+        alternativas: ["Data Bus", "Address Bus", "DMA", "EPROM"],
+        correta: "Address Bus"
+    },
+
+    {
+        pergunta: "Estrada usada para transportar os dados entre os componentes.",
+        alternativas: ["Registradores", "ROM", "Data Bus", "CPU"],
+        correta: "Data Bus"
+    },
+
+    {
+        pergunta: "Processador da Intel famoso pelo equilíbrio entre desempenho e preço.",
+        alternativas: ["I7", "Dual Core", "I5", "Quad Core"],
+        correta: "I5"
+    },
+
+    {
+        pergunta: "Versão mais potente da linha da Intel, muito usada em tarefas pesadas.",
+        alternativas: ["I5", "I7", "Flash", "ULA"],
+        correta: "I7"
+    },
+
+    {
+        pergunta: "Processador que trabalha com dupla personalidade.",
+        alternativas: ["Quad Core", "Dual Core", "DMA", "ROM"],
+        correta: "Dual Core"
+    },
+
+    {
+        pergunta: "Processador que já vem com quatro núcleos prontos.",
+        alternativas: ["I5", "RAM", "Quad Core", "Address Bus"],
+        correta: "Quad Core"
+    }
+
+];
+let tamanho = perguntas.length
+
+let contador = 0
+let pontuacao = 0
+
+function showDoMilhao(valorResposta){
+
+    if (contador < tamanho){
+         telaFinal.innerHTML = ""
+        btn.innerHTML = "pular pergunta"
+        tela.innerHTML = ` 
+       
+
+                <div class="info">
+                    <span>Pergunta:</span>
+                    <span id="numeroPergunta">1</span>
+                </div>
+
+                <div class="info">
+                    <span>Pontuação:</span>
+                    <span id="pontuacaotxt">0</span>
+                </div>
+
+            </div>
+
+            <div class="caixaPergunta">
+
+                <h2 id="perguntatxt"></h2>
+
+            </div>
+
+            <div class="alternativas">
+
+
+                <button id="A" class="alternativa" onclick="showDoMilhao(0)">Alternativa A</button>
+
+                <button id="B"class="alternativa" onclick="showDoMilhao(1)">Alternativa B</button>
+
+                <button id="C" class="alternativa" onclick="showDoMilhao(2)">Alternativa C</button>
+
+                <button id="D" class="alternativa" onclick="showDoMilhao(3)">Alternativa D</button>
+
+            </div>
+
+
+            <div id="resposta"></div>
+
+        </div>`
+        
+        correta = 0
+        numeroPergunta.innerHTML = contador
+    
+        perguntatxt.innerHTML = perguntas[contador].pergunta
+        A.innerHTML = `A - ${perguntas[contador].alternativas[0]}`
+        B.innerHTML = `B - ${perguntas[contador].alternativas[1]}`
+        C.innerHTML = `C - ${perguntas[contador].alternativas[2]}`
+        D.innerHTML = `D - ${perguntas[contador].alternativas[3]}`
+
+        let resposta = perguntas[contador].correta
+        console.log(resposta)
+        
+        for (let i = 0; i < perguntas[contador].alternativas.length; i++){
+            if(perguntas[contador].alternativas[i] == resposta){
+                correta = i
+            }
+        }
+    
+        if (valorResposta == correta){
+            pontuacao+= 10
+        } 
+
+        pontuacaotxt.innerHTML = pontuacao
+        
+        console.log(pontuacao)
+        contador++
+        totalPeruguntas = contador
+
+
+    } else {
+        contador = 0
+        btn.innerHTML = "novo jogo"
+        tela.innerHTML = ""
+        telaFinal.innerHTML = `
+            
+        <h1>Fim de Jogo</h1>
+
+        <h3 id="pontuacaoFinal">Você fez no total ${pontuacao}/${totalPeruguntas*10} pontos     </h3>
+
+        
+        `
+    }
+
+}
+
+
+</script>
